@@ -1,0 +1,234 @@
+<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:controls="using:Sy.Avalonia.Material.Controls">
+
+	<Design.PreviewWith>
+		<Border Background="White" Padding="32">
+			<StackPanel Spacing="32">
+				<!-- Horizontal -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="32" Width="512">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Horizontal ScrollBars" />
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="Default" />
+						<ScrollBar
+								AllowAutoHide="False" Background="{DynamicResource md.sys.brush.surface-bright}"
+								Maximum="1000" Orientation="Horizontal" Value="250"
+								VerticalAlignment="Center" ViewportSize="500" Width="500" />
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="Default (Disabled)" />
+						<ScrollBar
+								AllowAutoHide="False" Background="{DynamicResource md.sys.brush.surface-bright}"
+								IsEnabled="False" Maximum="1000" Orientation="Horizontal" Value="250"
+								VerticalAlignment="Center" ViewportSize="500" Width="500" />
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="AutoHide" />
+						<ScrollBar
+								AllowAutoHide="True" Background="{DynamicResource md.sys.brush.surface-bright}"
+								Maximum="1000" Orientation="Horizontal" Value="250"
+								VerticalAlignment="Center" ViewportSize="500" Width="500" />
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="AutoHide (Disabled, Should Never Appear)" />
+						<ScrollBar
+								AllowAutoHide="True" Background="{DynamicResource md.sys.brush.surface-bright}"
+								IsEnabled="False" Maximum="1000" Orientation="Horizontal" Value="250"
+								VerticalAlignment="Center" ViewportSize="500" Width="500" />
+					</StackPanel>
+				</Border>
+				
+				<!-- Vertical -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Vertical ScrollBars" />
+						<TextBlock
+								Classes="label-medium" Margin="0 0 0 -16"
+								Text="Default               Disabled              AutoHide          AH Disabled" />
+
+						<StackPanel Margin="20 0 0 0" Orientation="Horizontal" Spacing="100">
+							<ScrollBar
+								AllowAutoHide="False" Background="{DynamicResource md.sys.brush.surface-bright}"
+								Height="256" Maximum="1000" Orientation="Vertical"
+								Value="250" VerticalAlignment="Center" ViewportSize="500" />
+							<ScrollBar
+								AllowAutoHide="False" Background="{DynamicResource md.sys.brush.surface-bright}"
+								Height="256" IsEnabled="False" Maximum="1000" Orientation="Vertical"
+								Value="250" VerticalAlignment="Center" ViewportSize="500" />
+							<ScrollBar
+								AllowAutoHide="True" Background="{DynamicResource md.sys.brush.surface-bright}"
+								Height="256" Maximum="1000" Orientation="Vertical"
+								Value="250" VerticalAlignment="Center" ViewportSize="500" />
+							<ScrollBar
+								AllowAutoHide="True" Background="{DynamicResource md.sys.brush.surface-bright}"
+								Height="256" IsEnabled="False" Maximum="1000" Orientation="Vertical"
+								Value="250" VerticalAlignment="Center" ViewportSize="500" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+				
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialScrollBarPageButton" TargetType="RepeatButton">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border 
+						x:Name="PART_Container"
+						Background="{TemplateBinding Background}" 
+						CornerRadius="{TemplateBinding CornerRadius}" />
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialScrollBarThumb" TargetType="Thumb">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border 
+							x:Name="PART_Container"
+							Background="{TemplateBinding Background}"
+							CornerRadius="{TemplateBinding CornerRadius}" />
+
+					<Border 
+							x:Name="PART_StateLayer"
+							Background="{TemplateBinding Background}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Opacity="0" />
+				</Panel>
+				
+			</ControlTemplate>
+		</Setter>
+
+		<!-- States / Pressed -->
+		<Style Selector="^:pressed /template/ Border#PART_StateLayer">
+			<Setter Property="Opacity" Value="{DynamicResource md.comp.scrollbar.pressed.thumb.opacity}" />
+		</Style>
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialScrollBar" TargetType="ScrollBar">
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface}" />
+		<Setter Property="HideDelay" Value="00:00:01" />
+		<Setter Property="MinHeight" Value="{DynamicResource md.comp.scrollbar.default.container.min-height}" />
+		<Setter Property="MinWidth" Value="{DynamicResource md.comp.scrollbar.default.container.min-width}" />
+		<Setter Property="ShowDelay" Value="00:00:00" />
+		
+		<Setter Property="controls:ShapeHelper.Shape" Value="{DynamicResource md.comp.scrollbar.default.container.shape}" />
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border 
+						x:Name="PART_Container"
+						Background="{TemplateBinding Background}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+					<Track 
+							x:Name="PART_Track"
+							DeferThumbDrag="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
+							Maximum="{TemplateBinding Maximum}"
+							Minimum="{TemplateBinding Minimum}"
+							Orientation="{TemplateBinding Orientation}"
+							ViewportSize="{TemplateBinding ViewportSize}"
+							Value="{TemplateBinding Value, Mode=TwoWay}">
+						<Track.DecreaseButton>
+							<RepeatButton 
+									x:Name="PART_PageUpButton"
+									Background="Transparent"
+									Classes="largeIncrease"
+									Focusable="False"
+									Theme="{StaticResource MaterialScrollBarPageButton}" />
+						</Track.DecreaseButton>
+						<Track.IncreaseButton>
+							<RepeatButton 
+									x:Name="PART_PageDownButton"
+									Background="Transparent"
+									Classes="largeIncrease"
+									Focusable="False"
+									Theme="{StaticResource MaterialScrollBarPageButton}" />
+						</Track.IncreaseButton>
+						<Thumb 
+								x:Name="PART_Thumb"
+								Background="{TemplateBinding Foreground}"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								Opacity="0"
+								Theme="{StaticResource MaterialScrollBarThumb}" />
+					</Track>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Variants -->
+		<Style Selector="^:vertical /template/ Track#PART_Track">
+			<Setter Property="IsDirectionReversed" Value="True" />
+		</Style>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface}" />
+			<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface}" />
+			<Setter Property="Opacity" Value="{DynamicResource md.comp.scrollbar.disabled.container.opacity}" />
+		</Style>
+
+		<!-- States / Expanded -->
+		<Style Selector="^[IsExpanded=true]">
+			<Style Selector="^ /template/ Thumb#PART_Thumb">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.scrollbar.default.thumb.opacity}" />
+			</Style>
+			
+			<!-- States / Hovered -->
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Thumb#PART_Thumb">
+					<Setter Property="Opacity" Value="{DynamicResource md.comp.scrollbar.hover.thumb.opacity}" />
+				</Style>
+			</Style>
+
+			<!-- States / Focused -->
+			<Style Selector="^:focus">
+				<Style Selector="^ /template/ Thumb#PART_Thumb">
+					<Setter Property="Opacity" Value="{DynamicResource md.comp.scrollbar.focus.thumb.opacity}" />
+				</Style>
+			</Style>
+		</Style>
+		
+		<!-- Transitions -->
+		<Style Selector="^:not(.no-transitions) /template/ Thumb#PART_Thumb">
+			<Setter Property="Transitions">
+				<Transitions>
+					<DoubleTransition Duration="0:0:0.10" Property="Opacity" Easing="LinearEasing" />
+				</Transitions>
+			</Setter>
+		</Style>
+
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<!-- Default Style -->
+	<ControlTheme 
+			x:Key="{x:Type ScrollBar}"
+			TargetType="ScrollBar"
+			BasedOn="{StaticResource MaterialScrollBar}" />
+
+	<ControlTheme 
+			x:Key="{x:Type controls:ScrollBarEx}"
+			TargetType="ScrollBar"
+			BasedOn="{StaticResource MaterialScrollBar}" />
+</ResourceDictionary>

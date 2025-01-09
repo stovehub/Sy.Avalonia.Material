@@ -1,0 +1,618 @@
+<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="using:Sy.Avalonia.Material.Controls"
+		xmlns:i="using:Material.Icons.Avalonia">
+	
+	<Design.PreviewWith>
+		<Border Background="White" Padding="32">
+			<StackPanel Spacing="32">
+				<!-- Horizontal -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="16" Width="350">
+						<TextBlock Classes="title-medium" Text="Horizontal ProgressBars" />
+						
+						<ProgressBar Value="0" Height="2"/>
+						<ProgressBar Value="33" Height="4" c:ProgressBarHelper.IsStopIndicatorVisible="False" />
+						<ProgressBar Value="67" Height="6" />
+						<ProgressBar Value="100" Height="8" />
+						<ProgressBar Height="10" IsIndeterminate="True" />
+
+						<ProgressBar Margin="0 16 0 0" Value="0"/>
+						<ProgressBar Value="33" c:ProgressBarHelper.IsStopIndicatorVisible="False" />
+						<ProgressBar Value="67" />
+						<ProgressBar Value="100" />
+						<ProgressBar IsIndeterminate="True" />
+					</StackPanel>
+				</Border>
+
+				<!-- Vertical -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="16">
+						<TextBlock Classes="title-medium" Text="Vertical ProgressBars" />
+
+						<StackPanel Height="200" Orientation="Horizontal" Spacing="32">
+							<ProgressBar Orientation="Vertical" Value="0" Width="2"/>
+							<ProgressBar Orientation="Vertical" Value="33" Width="4" c:ProgressBarHelper.IsStopIndicatorVisible="False" />
+							<ProgressBar Orientation="Vertical" Value="67" Width="6" />
+							<ProgressBar Orientation="Vertical" Value="100" Width="8" />
+							<ProgressBar Orientation="Vertical" Width="10" IsIndeterminate="True" />
+
+							<ProgressBar Margin="16 0 0 0" Orientation="Vertical" Value="0"/>
+							<ProgressBar Orientation="Vertical" Value="33" c:ProgressBarHelper.IsStopIndicatorVisible="False" />
+							<ProgressBar Orientation="Vertical" Value="67" />
+							<ProgressBar Orientation="Vertical" Value="100" />
+							<ProgressBar Orientation="Vertical" IsIndeterminate="True" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+
+				<!-- Circular -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="16">
+						<TextBlock Classes="title-medium" Text="Circular ProgressBars" />
+
+						<StackPanel Orientation="Horizontal" Spacing="24">
+							<ProgressBar Theme="{StaticResource MaterialCircularProgressIndicator}" Value="0" />
+							<ProgressBar Theme="{StaticResource MaterialCircularProgressIndicator}" Value="33" />
+							<ProgressBar Theme="{StaticResource MaterialCircularProgressIndicator}" Value="66" />
+							<ProgressBar Theme="{StaticResource MaterialCircularProgressIndicator}" Value="100" />
+							<ProgressBar Margin="10" Theme="{StaticResource MaterialCircularProgressIndicator}" IsIndeterminate="True" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+				
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+	
+	<!-- ######################################################################################## -->
+	
+	<ControlTheme x:Key="MaterialProgressIndicator" TargetType="ProgressBar">
+		<Setter Property="Background" Value="{DynamicResource md.sys.brush.secondary-container}" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.primary}" />
+		<Setter	Property="ClipToBounds" Value="False" />
+
+		<Setter Property="c:ControlHelper.IsMaterialAnimationsEnabled" Value="False" />
+		<Setter Property="c:ProgressBarHelper.Spacing" Value="{DynamicResource md.comp.progress.default.track.spacing}" />
+		<Setter Property="c:ProgressBarHelperInt.IsCircular" Value="False" />
+		<Setter Property="c:ProgressBarHelperInt.IsHooked" Value="True" />
+		<Setter Property="c:ShapeHelper.Shape" Value="{DynamicResource md.comp.progress.default.track.shape}" />
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border 
+							x:Name="PART_DeterminateRoot"
+							ClipToBounds="True"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Opacity="0"
+							Padding="{TemplateBinding c:ProgressBarHelperInt.DeterminateContainerPadding}">
+						<Panel>
+							<Grid RowDefinitions="*, Auto" ColumnDefinitions="Auto, *">
+								<Border 
+										x:Name="PART_Indicator"
+										Background="{TemplateBinding Foreground}"
+										CornerRadius="{TemplateBinding CornerRadius}"
+										Margin="{TemplateBinding c:ProgressBarHelperInt.DeterminateIndicatorMargin}" />
+								<Border 
+										x:Name="PART_Track"
+										Background="{TemplateBinding Background}"
+										CornerRadius="{TemplateBinding CornerRadius}" />
+							</Grid>
+							<Border 
+									x:Name="PART_StopIndicator"
+									Background="{TemplateBinding Foreground}"
+									CornerRadius="{TemplateBinding CornerRadius}"
+									IsVisible="{TemplateBinding c:ProgressBarHelper.IsStopIndicatorVisible}"
+									Margin="{TemplateBinding c:ProgressBarHelperInt.DeterminateIndicatorMargin}" />
+						</Panel>
+					</Border>
+					<Border 
+							x:Name="PART_IndeterminateRoot"
+							ClipToBounds="True"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Opacity="0"
+							Padding="{TemplateBinding c:ProgressBarHelperInt.IndeterminateContainerPadding}">
+						<c:RelativeCanvas IsPositionsRelativeToOrigin="True">
+							<Border 
+									x:Name="PART_Track3"
+									Background="{TemplateBinding Background}"
+									CornerRadius="{TemplateBinding CornerRadius}"
+									Margin="{TemplateBinding c:ProgressBarHelperInt.IndeterminateTrackMargin}" />
+							<Border 
+									x:Name="PART_Indicator2"
+									Background="{TemplateBinding Foreground}"
+									CornerRadius="{TemplateBinding CornerRadius}"
+									Margin="{TemplateBinding c:ProgressBarHelperInt.IndeterminateTrackMargin}" />
+							<Border 
+									x:Name="PART_Track2"
+									Background="{TemplateBinding Background}"
+									CornerRadius="{TemplateBinding CornerRadius}"
+									Margin="{TemplateBinding c:ProgressBarHelperInt.IndeterminateTrackMargin}" />
+							<Border 
+									x:Name="PART_Indicator1"
+									Background="{TemplateBinding Foreground}"
+									CornerRadius="{TemplateBinding CornerRadius}"
+									Margin="{TemplateBinding c:ProgressBarHelperInt.IndeterminateTrackMargin}" />
+							<Border 
+									x:Name="PART_Track1"
+									Background="{TemplateBinding Background}"
+									CornerRadius="{TemplateBinding CornerRadius}"
+									Margin="{TemplateBinding c:ProgressBarHelperInt.IndeterminateTrackMargin}" />
+						</c:RelativeCanvas>
+					</Border>
+					<Border 
+							x:Name="PART_Border"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"/>
+					</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Determinate -->
+		<Style Selector="^:not(:indeterminate)">
+			<Style Selector="^ /template/ Border#PART_DeterminateRoot">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+			
+			<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=True]">
+				<Setter Property="Transitions">
+					<Transitions>
+						<DoubleTransition Duration="0:0:0.2" Property="Value" Easing="LinearEasing" />
+					</Transitions>
+				</Setter>
+			</Style>
+		</Style>
+
+		<!-- Indeterminate -->
+		<Style Selector="^:indeterminate /template/ Border#PART_IndeterminateRoot">
+			<Setter Property="Opacity" Value="1" />
+		</Style>
+		
+		<!-- Horizontal -->
+		<Style Selector="^:horizontal">
+			<Setter Property="Height" Value="4" />
+			<Setter Property="MinHeight" Value="2" />
+			<Setter Property="MinWidth" Value="64" />
+			
+			<Style Selector="^ /template/ Border#PART_Indicator">
+				<Setter Property="HorizontalAlignment" Value="Left" />
+				<Setter Property="VerticalAlignment" Value="Stretch" />
+			</Style>
+			
+			<Style Selector="^ /template/ Border#PART_Track">
+				<Setter Property="Grid.Column" Value="1" />
+			</Style>
+			
+			<Style Selector="^ /template/ Border#PART_StopIndicator">
+				<Setter Property="HorizontalAlignment" Value="Right" />
+				<Setter Property="Width" Value="{Binding $parent[ProgressBar].Bounds.Height}" />
+			</Style>
+			
+			<Style Selector="^:indeterminate">
+				<Style Selector="^ /template/ Border#PART_Track1">
+					<Setter Property="Canvas.Top" Value="0" />
+					<Setter Property="Canvas.Bottom" Value="1" />
+					<Setter Property="Canvas.Right" Value="1" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- First Track Head -->
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.000">
+								<Setter Property="Canvas.Left" Value="0" />
+							</KeyFrame>
+							
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.750">
+								<Setter Property="Canvas.Left" Value="1" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+				
+				<Style Selector="^ /template/ Border#PART_Indicator1">
+					<Setter Property="Canvas.Top" Value="0" />
+					<Setter Property="Canvas.Bottom" Value="1" />
+					
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- First Track Head -->
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.000">
+								<Setter Property="Canvas.Right" Value="0" />
+							</KeyFrame>
+							
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.750">
+								<Setter Property="Canvas.Right" Value="1" />
+							</KeyFrame>
+							
+							<!-- First Track Tail -->
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:00.333">
+								<Setter Property="Canvas.Left" Value="0" />
+							</KeyFrame>
+							
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:01.183">
+								<Setter Property="Canvas.Left" Value="1" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+				
+				<Style Selector="^ /template/ Border#PART_Track2">
+					<Setter Property="Canvas.Top" Value="0" />
+					<Setter Property="Canvas.Bottom" Value="1" />
+					
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- First Track Tail -->
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:00.333">
+								<Setter Property="Canvas.Right" Value="0" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:1.183">
+								<Setter Property="Canvas.Right" Value="1" />
+							</KeyFrame>
+
+							<!-- Second Track Head -->
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.000">
+								<Setter Property="Canvas.Left" Value="0" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.567">
+								<Setter Property="Canvas.Left" Value="1" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+
+				<Style Selector="^ /template/ Border#PART_Indicator2">
+					<Setter Property="Canvas.Top" Value="0" />
+					<Setter Property="Canvas.Bottom" Value="1" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- Second Track Head -->
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.000">
+								<Setter Property="Canvas.Right" Value="0" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.567">
+								<Setter Property="Canvas.Right" Value="1" />
+							</KeyFrame>
+
+							<!-- Second Track Tail -->
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.267">
+								<Setter Property="Canvas.Left" Value="0" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.800">
+								<Setter Property="Canvas.Left" Value="1" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+
+				<Style Selector="^ /template/ Border#PART_Track3">
+					<Setter Property="Canvas.Top" Value="0" />
+					<Setter Property="Canvas.Bottom" Value="1" />
+					<Setter Property="Canvas.Left" Value="0" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- Second Track Tail -->
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.267">
+								<Setter Property="Canvas.Right" Value="0" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.800">
+								<Setter Property="Canvas.Right" Value="1" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+			</Style>
+		</Style>
+		
+		<!-- Vertical -->
+		<Style Selector="^:vertical">
+			<Setter Property="MinHeight" Value="64" />
+			<Setter Property="MinWidth" Value="2" />
+			<Setter Property="Width" Value="4" />
+			
+			<Style Selector="^ /template/ Border#PART_Indicator">
+				<Setter Property="HorizontalAlignment" Value="Stretch" />
+				<Setter Property="VerticalAlignment" Value="Bottom" />
+				<Setter Property="Grid.ColumnSpan" Value="2" />
+				<Setter Property="Grid.Row" Value="1" />
+			</Style>
+			
+			<Style Selector="^ /template/ Border#PART_Track">
+				<Setter Property="Grid.ColumnSpan" Value="2" />
+			</Style>
+			
+			<Style Selector="^ /template/ Border#PART_StopIndicator">
+				<Setter Property="Height" Value="{Binding $parent[ProgressBar].Bounds.Width}" />
+				<Setter Property="VerticalAlignment" Value="Top" />
+			</Style>
+			
+			<Style Selector="^:indeterminate">
+
+				<Style Selector="^ /template/ Border#PART_Track1">
+					<Setter Property="Canvas.Left" Value="0" />
+					<Setter Property="Canvas.Right" Value="1" />
+					<Setter Property="Canvas.Top" Value="0" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- First Track Head -->
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.000">
+								<Setter Property="Canvas.Bottom" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.750">
+								<Setter Property="Canvas.Bottom" Value="0" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+
+				<Style Selector="^ /template/ Border#PART_Indicator1">
+					<Setter Property="Canvas.Left" Value="0" />
+					<Setter Property="Canvas.Right" Value="1" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- First Track Head -->
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.000">
+								<Setter Property="Canvas.Top" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.2, 0.0, 0.8, 1.0" KeyTime="00:00:00.750">
+								<Setter Property="Canvas.Top" Value="0" />
+							</KeyFrame>
+
+							<!-- First Track Tail -->
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:00.333">
+								<Setter Property="Canvas.Bottom" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:01.183">
+								<Setter Property="Canvas.Bottom" Value="0" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+
+				<Style Selector="^ /template/ Border#PART_Track2">
+					<Setter Property="Canvas.Left" Value="0" />
+					<Setter Property="Canvas.Right" Value="1" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- First Track Tail -->
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:00.333">
+								<Setter Property="Canvas.Top" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.4, 0.0, 1.0, 1.0" KeyTime="00:00:1.183">
+								<Setter Property="Canvas.Top" Value="0" />
+							</KeyFrame>
+
+							<!-- Second Track Head -->
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.000">
+								<Setter Property="Canvas.Bottom" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.567">
+								<Setter Property="Canvas.Bottom" Value="0" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+
+				<Style Selector="^ /template/ Border#PART_Indicator2">
+					<Setter Property="Canvas.Left" Value="0" />
+					<Setter Property="Canvas.Right" Value="1" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- Second Track Head -->
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.000">
+								<Setter Property="Canvas.Top" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.0, 0.0, 0.65, 1.0" KeyTime="00:00:01.567">
+								<Setter Property="Canvas.Top" Value="0" />
+							</KeyFrame>
+
+							<!-- Second Track Tail -->
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.267">
+								<Setter Property="Canvas.Bottom" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.800">
+								<Setter Property="Canvas.Bottom" Value="0" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+
+				<Style Selector="^ /template/ Border#PART_Track3">
+					<Setter Property="Canvas.Left" Value="0" />
+					<Setter Property="Canvas.Right" Value="1" />
+					<Setter Property="Canvas.Bottom" Value="1" />
+
+					<Style.Animations>
+						<Animation Duration="00:00:02.200" FillMode="Both" IterationCount="Infinite">
+							<!-- Second Track Tail -->
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.267">
+								<Setter Property="Canvas.Top" Value="1" />
+							</KeyFrame>
+
+							<KeyFrame KeySpline="0.1, 0.0, 0.45, 1.0" KeyTime="00:00:01.800">
+								<Setter Property="Canvas.Top" Value="0" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+			</Style>
+		</Style>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialCircularProgressIndicator" TargetType="ProgressBar">
+		<Setter Property="Background" Value="{DynamicResource md.sys.brush.secondary-container}" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.primary}" />
+		<Setter Property="Height" Value="48" />
+		<Setter Property="Width" Value="48" />
+
+		<Setter Property="c:ControlHelper.IsMaterialAnimationsEnabled" Value="False" />
+		<Setter Property="c:ProgressBarHelper.CircularStrokeLineCap" Value="{DynamicResource md.comp.progress.circular.track.cap}" />
+		<Setter Property="c:ProgressBarHelper.CircularStrokeThickness" Value="{DynamicResource md.comp.progress.circular.track.thickness}" />
+		<Setter Property="c:ProgressBarHelper.Spacing" Value="{DynamicResource md.comp.progress.default.track.spacing}" />
+		<Setter Property="c:ProgressBarHelperInt.IsCircular" Value="True" />
+		<Setter Property="c:ProgressBarHelperInt.IsHooked" Value="True" />
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Panel 
+							x:Name="PART_DeterminateRoot" 
+							Opacity="0" 
+							RenderTransform="rotate(-90deg)">
+						<Arc 
+								x:Name="PART_Track"
+								Stroke="{TemplateBinding Background}"
+								Height="{TemplateBinding c:ProgressBarHelperInt.CircularSize}"
+								StartAngle="{TemplateBinding c:ProgressBarHelperInt.CircularTrackStartAngle}"
+								StrokeLineCap="{TemplateBinding c:ProgressBarHelper.CircularStrokeLineCap}"
+								StrokeThickness="{TemplateBinding c:ProgressBarHelper.CircularStrokeThickness}"
+								SweepAngle="{TemplateBinding c:ProgressBarHelperInt.CircularTrackSweep}"
+								Width="{TemplateBinding c:ProgressBarHelperInt.CircularSize}" />
+						<Arc 
+								x:Name="PART_ActiveIndicator"
+								Stroke="{TemplateBinding Foreground}"
+								Height="{TemplateBinding c:ProgressBarHelperInt.CircularSize}"
+								StartAngle="{TemplateBinding c:ProgressBarHelperInt.CircularIndicatorStartAngle}"
+								StrokeLineCap="{TemplateBinding c:ProgressBarHelper.CircularStrokeLineCap}"
+								StrokeThickness="{TemplateBinding c:ProgressBarHelper.CircularStrokeThickness}"
+								SweepAngle="{TemplateBinding c:ProgressBarHelperInt.CircularIndicatorSweep}"
+								Width="{TemplateBinding c:ProgressBarHelperInt.CircularSize}" />
+					</Panel>
+					<Panel 
+							x:Name="PART_IndeterminateRoot"
+							Opacity="0">
+						<Arc 
+								x:Name="PART_Indeterminate"
+								Stroke="{TemplateBinding Foreground}"
+								Height="{TemplateBinding c:ProgressBarHelperInt.CircularSize}"
+								StrokeLineCap="{TemplateBinding c:ProgressBarHelper.CircularStrokeLineCap}"
+								StrokeThickness="{TemplateBinding c:ProgressBarHelper.CircularStrokeThickness}"
+								Width="{TemplateBinding c:ProgressBarHelperInt.CircularSize}" />
+					</Panel>
+					
+					<!-- Appease the Avalonia overlords -->
+					<Border 
+							x:Name="PART_Indicator" 
+							IsHitTestVisible="False"
+							IsVisible="False"  />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Determinate -->
+		<Style Selector="^:not(:indeterminate)">
+			<Style Selector="^ /template/ Panel#PART_DeterminateRoot">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=True]">
+				<Style Selector="^ /template/ Arc#PART_Track">
+					<Setter Property="Transitions">
+						<Transitions>
+							<DoubleTransition Duration="0:0:0.2" Property="StartAngle" Easing="LinearEasing" />
+							<DoubleTransition Duration="0:0:0.2" Property="SweepAngle" Easing="LinearEasing" />
+						</Transitions>
+					</Setter>
+				</Style>
+				
+				<Style Selector="^ /template/ Arc#PART_ActiveIndicator">
+					<Setter Property="Transitions">
+						<Transitions>
+							<DoubleTransition Duration="0:0:0.2" Property="SweepAngle" Easing="LinearEasing" />
+						</Transitions>
+					</Setter>
+				</Style>
+			</Style>
+		</Style>
+
+		<!-- Indeterminate -->
+		<Style Selector="^:indeterminate">
+			<Style Selector="^ /template/ Panel#PART_IndeterminateRoot">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<Style Selector="^ /template/ Arc#PART_Indeterminate">
+				<Setter Property="RenderTransform">
+					<RotateTransform />
+				</Setter>
+				
+				<Style.Animations>
+					<!-- JumpRotationAngle = Sweep2 - Sweep1 - 360  -->
+					<!-- This is where the Start/Sweep animation ends, -->
+					<!-- so compensate rotation accordingly. -->
+					
+					<Animation Duration="00:00:02.666" FillMode="Both" IterationCount="Infinite">
+						<KeyFrame KeyTime="00:00:00.000">
+							<Setter Property="RotateTransform.Angle" Value="-90" />
+						</KeyFrame>
+						<KeyFrame KeyTime="00:00:02.666">
+							<Setter Property="RotateTransform.Angle" Value="715" />
+						</KeyFrame>
+					</Animation>
+
+					<Animation Duration="00:00:02.666" FillMode="Both" IterationCount="Infinite">
+						<KeyFrame KeySpline="0.4, 0.0, 0.2, 1.0" KeyTime="00:00:00.000">
+							<Setter Property="SweepAngle" Value="15" /> <!-- Sweep1 -->
+						</KeyFrame>
+						<KeyFrame KeySpline="0.4, 0.0, 0.2, 1.0" KeyTime="00:00:01.333">
+							<Setter Property="SweepAngle" Value="310" /> <!-- Sweep2 -->
+							<Setter Property="StartAngle" Value="0" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.4, 0.0, 0.2, 1.0" KeyTime="00:00:02.666">
+							<Setter Property="SweepAngle" Value="15" />
+							<Setter Property="StartAngle" Value="275" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+		</Style>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+	
+	<!-- Default Style -->
+	<ControlTheme
+			x:Key="{x:Type ProgressBar}"
+			TargetType="ProgressBar" 
+			BasedOn="{StaticResource MaterialProgressIndicator}" />
+</ResourceDictionary>

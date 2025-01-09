@@ -1,0 +1,88 @@
+﻿<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:controls="using:Sy.Avalonia.Material.Controls">
+	
+	<Design.PreviewWith>
+		<Border Background="White" Padding="32">
+			<StackPanel Spacing="32">
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="16">
+						<TextBlock Classes="title-medium" Text="Default ScrollViewer" />
+
+						<Border BorderBrush="{DynamicResource md.sys.brush.outline-variant}" BorderThickness="1">
+							<ScrollViewer
+								Width="256" Height="256" HorizontalScrollBarVisibility="Visible">
+								<StackPanel Spacing="24" Width="512">
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 1" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 2" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 3" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 4" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 5" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 6" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 7" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 8" Width="512" />
+									<TextBlock Background="LightGray" HorizontalAlignment="Left" Text="Item 9" Width="512" />
+								</StackPanel>
+							</ScrollViewer>
+						</Border>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialScrollViewer" TargetType="ScrollViewer">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<ScrollContentPresenter 
+							x:Name="PART_ContentPresenter"
+							Grid.Row="0"
+							Grid.Column="0"
+							Background="{TemplateBinding Background}"
+							HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
+							VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}"
+							HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
+							VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
+							Padding="{TemplateBinding Padding}"
+							ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}">
+						<ScrollContentPresenter.GestureRecognizers>
+							<ScrollGestureRecognizer 
+									CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+									CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
+									IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}"/>
+						</ScrollContentPresenter.GestureRecognizers>
+					</ScrollContentPresenter>
+					<controls:ScrollBarEx 
+							x:Name="PART_HorizontalScrollBar"
+							Margin="4 0 8 4"
+							Orientation="Horizontal"
+							VerticalAlignment="Bottom" />
+					<controls:ScrollBarEx 
+							x:Name="PART_VerticalScrollBar"
+							HorizontalAlignment="Right"
+							Margin="0 4 4 8"
+							Orientation="Vertical" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+
+	<!-- Default Style -->
+	<ControlTheme 
+			x:Key="{x:Type ScrollViewer}"
+			TargetType="ScrollViewer"
+			BasedOn="{StaticResource MaterialScrollViewer}" />
+</ResourceDictionary>

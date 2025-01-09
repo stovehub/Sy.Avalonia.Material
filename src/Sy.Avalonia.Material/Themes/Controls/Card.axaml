@@ -1,0 +1,353 @@
+<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="using:Sy.Avalonia.Material.Controls"
+		xmlns:i="using:Material.Icons.Avalonia">
+	
+	<Design.PreviewWith>
+		<Border Background="White" Padding="32">
+			<StackPanel Orientation="Horizontal" Spacing="32">
+				<!-- Outlined -->
+				<Border
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						Padding="32">
+					<StackPanel Spacing="16" Width="128">
+						<TextBlock Classes="title-medium" Text="Outlined Cards" />
+						<c:Card
+								Content="Static" Height="64"
+								Theme="{StaticResource MaterialOutlinedCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Content="Draggable" Height="64"
+								Theme="{StaticResource MaterialOutlinedCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card 
+								Behavior="Draggable" Classes="debug-hover" Content="Hovered" Height="64"
+								Theme="{StaticResource MaterialOutlinedCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-focus" Content="Focused" Height="64"
+								Theme="{StaticResource MaterialOutlinedCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-pressed" Content="Pressed" Height="64"
+								Theme="{StaticResource MaterialOutlinedCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-dragged" Content="Dragged" Height="64"
+								Theme="{StaticResource MaterialOutlinedCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Content="Disabled" Height="61" IsEnabled="False" 
+								Theme="{StaticResource MaterialOutlinedCard}"
+								VerticalContentAlignment="Bottom" />
+					</StackPanel>
+				</Border>
+
+				<!-- Elevated -->
+				<Border
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						Padding="32">
+					<StackPanel Spacing="16" Width="128">
+						<TextBlock Classes="title-medium" Text="Elevated Cards" />
+						<c:Card
+								Content="Static" Height="64"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Content="Draggable" Height="64"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-hover" Content="Hovered" Height="64"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-focus" Content="Focused" Height="64"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-pressed" Content="Pressed" Height="64"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-dragged" Content="Dragged" Height="64"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Content="Disabled" Height="61" IsEnabled="False"
+								VerticalContentAlignment="Bottom" />
+					</StackPanel>
+				</Border>
+
+				<!-- Filled -->
+				<Border
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						Padding="32">
+					<StackPanel Spacing="16" Width="128">
+						<TextBlock Classes="title-medium" Text="Filled Cards" />
+						<c:Card
+								Content="Static" Height="64"
+								Theme="{StaticResource MaterialFilledCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Content="Draggable" Height="64"
+								Theme="{StaticResource MaterialFilledCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-hover" Content="Hovered" Height="64"
+								Theme="{StaticResource MaterialFilledCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-focus" Content="Focused" Height="64"
+								Theme="{StaticResource MaterialFilledCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-pressed" Content="Pressed" Height="64"
+								Theme="{StaticResource MaterialFilledCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Classes="debug-dragged" Content="Dragged" Height="64"
+								Theme="{StaticResource MaterialFilledCard}"
+								VerticalContentAlignment="Bottom" />
+						<c:Card
+								Behavior="Draggable" Content="Disabled" Height="61" IsEnabled="False"
+								Theme="{StaticResource MaterialFilledCard}"
+								VerticalContentAlignment="Bottom" />
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialCardBase" TargetType="c:Card">
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface}" />
+		<Setter Property="Padding" Value="{DynamicResource md.comp.card.default.container.padding}" />
+
+		<Setter Property="c:ShapeHelper.Shape" Value="{DynamicResource md.comp.card.default.container.shape}" />
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border 
+							x:Name="PART_Container"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							c:ShadowHelper.Color="{TemplateBinding c:ShadowHelper.Color}"
+							c:ShadowHelper.Elevation="{TemplateBinding c:ShadowHelper.Elevation}"/>
+					<c:StateLayer
+							x:Name="PART_StateLayer"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							DragOpacity="{DynamicResource md.sys.state.dragged.state-layer-opacity}"
+							FeedbackBrush="{TemplateBinding Foreground}"
+							FeedbackOpacity="{DynamicResource md.sys.state.pressed.state-layer-opacity}"
+							FocusOpacity="{DynamicResource md.sys.state.focus.state-layer-opacity}"
+							HoverOpacity="{DynamicResource md.sys.state.hover.state-layer-opacity}"
+							IsFeedbackEnabled="False"
+							StateBrush="{TemplateBinding Foreground}" />
+					<ContentPresenter
+							x:Name="PART_ContentPresenter"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Padding="{TemplateBinding Padding}"
+							RecognizesAccessKey="True"
+							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.card.disabled.container.opacity}" />
+			</Style>
+		</Style>
+		
+		<Style Selector="^[Behavior=Actionable], ^[Behavior=Draggable]">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsFeedbackEnabled" Value="True" />
+			</Style>
+
+			<!-- States / Hovered -->
+			<Style Selector="^:pointerover, ^.debug-hover">
+				<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+					<Setter Property="IsHoveredState" Value="True" />
+				</Style>
+			</Style>
+
+			<!-- States / Focused -->
+			<Style Selector="^:focus, ^.debug-focus">
+				<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+					<Setter Property="IsFocusedState" Value="True" />
+				</Style>
+			</Style>
+
+			<!-- States / Pressed -->
+			<Style Selector="^:pressed, ^.debug-pressed">
+				<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+					<Setter Property="IsPressedState" Value="True" />
+				</Style>
+			</Style>
+			
+			<Style Selector="^.debug-pressed /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsFeedbackEnabled" Value="False" />
+			</Style>
+
+			<!-- Transitions -->
+			<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=True]">
+				<Style Selector="^ /template/ Border#PART_Container">
+					<Setter Property="Transitions">
+						<Transitions>
+							<BoxShadowsTransition Duration="0:0:0.1" Property="BoxShadow" Easing="LinearEasing" />
+						</Transitions>
+					</Setter>
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^[Behavior=Draggable]">
+			<!-- States / Dragged -->
+			<Style Selector="^:dragged, ^.debug-dragged">
+				<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+					<Setter Property="IsDraggedState" Value="True" />
+				</Style>
+			</Style>
+
+			<Style Selector="^.debug-dragged /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsFeedbackEnabled" Value="False" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialElevatedCard" TargetType="c:Card"
+								BasedOn="{StaticResource MaterialCardBase}">
+		<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-container-low}" />
+		<Setter Property="c:ShadowHelper.Color" Value="{DynamicResource md.sys.brush.shadow}" />
+		<Setter Property="c:ShadowHelper.Elevation" Value="1" />
+		
+		<Setter Property="c:StateLayer.RconSource" Value="{Binding $self}" />
+		<Setter Property="c:StateLayer.RconTargetName" Value="PART_StateLayer" />
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface}" />
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.card.disabled.container.opacity}" />
+			</Style>
+		</Style>
+
+		<!-- Actionable / Draggable Styles  -->
+		<Style Selector="^[Behavior=Actionable], ^[Behavior=Draggable]">
+			<!-- States / Hovered -->
+			<Style Selector="^:pointerover, ^.debug-hover">
+				<Setter Property="c:ShadowHelper.Elevation" Value="2" />
+			</Style>
+
+			<!-- States / Pressed -->
+			<Style Selector="^:pressed, ^.debug-pressed">
+				<Setter Property="c:ShadowHelper.Elevation" Value="1" />
+			</Style>
+		</Style>
+
+		<!-- Draggable Styles  -->
+		<Style Selector="^[Behavior=Draggable]">
+			<!-- States / Dragged -->
+			<Style Selector="^:dragged, ^.debug-dragged">
+				<Setter Property="c:ShadowHelper.Elevation" Value="4" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialFilledCard" TargetType="c:Card"
+								BasedOn="{StaticResource MaterialCardBase}">
+		<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-container-highest}" />
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface-variant}" />
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.card.disabled.container.opacity}" />
+			</Style>
+		</Style>
+
+		<!-- Actionable / Draggable Styles  -->
+		<Style Selector="^[Behavior=Actionable], ^[Behavior=Draggable]">
+			<!-- States / Hovered -->
+			<Style Selector="^:pointerover, ^.debug-hover">
+				<Setter Property="c:ShadowHelper.Elevation" Value="1" />
+			</Style>
+
+			<!-- States / Pressed -->
+			<Style Selector="^:pressed, ^.debug-pressed">
+				<Setter Property="c:ShadowHelper.Elevation" Value="0" />
+			</Style>
+		</Style>
+
+		<!-- Draggable Styles  -->
+		<Style Selector="^[Behavior=Draggable]">
+			<!-- States / Dragged -->
+			<Style Selector="^:dragged, ^.debug-dragged">
+				<Setter Property="c:ShadowHelper.Elevation" Value="3" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialOutlinedCard" TargetType="c:Card"
+								BasedOn="{StaticResource MaterialCardBase}">
+		<Setter Property="Background" Value="{DynamicResource md.sys.color.surface}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource md.sys.brush.outline-variant}" />
+		<Setter Property="BorderThickness" Value="1" />
+		
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="BorderBrush" Value="{DynamicResource md.sys.brush.outline}" />
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.card.outlined-disabled.outline.opacity}" />
+			</Style>
+		</Style>
+
+		<!-- Actionable / Draggable Styles  -->
+		<Style Selector="^[Behavior=Actionable], ^[Behavior=Draggable]">
+			<!-- States / Hovered -->
+			<Style Selector="^:pointerover, ^.debug-hover">
+				<Setter Property="c:ShadowHelper.Elevation" Value="1" />
+			</Style>
+
+			<!-- States / Focused -->
+			<!-- NOTE: The spec says the outline color should be OnSurface, -->
+			<!--       but no sample imagery supports this. -->
+
+			<!-- States / Pressed -->
+			<Style Selector="^:pressed, ^.debug-pressed">
+				<Setter Property="c:ShadowHelper.Elevation" Value="0" />
+			</Style>
+		</Style>
+
+		<!-- Draggable Styles  -->
+		<Style Selector="^[Behavior=Draggable]">
+			<!-- States / Dragged -->
+			<Style Selector="^:dragged, ^.debug-dragged">
+				<Setter Property="c:ShadowHelper.Elevation" Value="3" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<!-- Default Style -->
+	<ControlTheme
+			x:Key="{x:Type c:Card}"
+			TargetType="c:Card"
+			BasedOn="{StaticResource MaterialElevatedCard}" />
+</ResourceDictionary>

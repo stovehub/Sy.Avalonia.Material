@@ -1,0 +1,88 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:c="using:Sy.Avalonia.Material.Controls"
+										xmlns:i="using:Material.Icons.Avalonia">
+	<Design.PreviewWith>
+		<Border Background="White" Padding="70">
+			<StackPanel Orientation="Vertical" Width="350">
+				<Slider Value="69" Width="200" />
+
+				<TickBar Ticks="10, 20, 30, 50, 100" Width="100" Height="25" />
+				
+				<Thumb Classes="horizontal" Theme="{DynamicResource MaterialSliderHandle}" />
+
+			</StackPanel>
+
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialSliderTrack" TargetType="Track">
+
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialSliderHandle" TargetType="Thumb">
+		<Setter Property="Background" Value="Red" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Padding" Value="{DynamicResource md.comp.slider.default.track.spacing}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+
+		<Setter Property="c:ShadowHelper.Elevation" Value="1" />
+		<Setter Property="c:ShapeHelper.Shape" Value="C" />
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Background="rgb(240,240,240)"
+							ColumnDefinitions="6, Auto, 6"
+							RowDefinitions="6, Auto, 6">
+					<Border
+						x:Name="PART_Handle" Width="4" Height="44"
+						Grid.Column="1"
+						Grid.Row="1"
+						Background="{TemplateBinding Background}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						c:ShadowHelper.Color="{TemplateBinding c:ShadowHelper.Color}"
+						c:ShadowHelper.Elevation="{TemplateBinding c:ShadowHelper.Elevation}" />
+				</Grid>
+				
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Variants -->
+		<Style Selector="^.horizontal /template/ Border#PART_Handle">
+			<Setter Property="Height" Value="44" />
+			<Setter Property="Width" Value="4" />
+		</Style>
+
+		<Style Selector="^.vertical  /template/ Border#PART_Handle">
+			<Setter Property="Height" Value="4" />
+			<Setter Property="Width" Value="44" />
+		</Style>
+
+		<!-- Transitions -->
+		<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=True]">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Transitions">
+					<Transitions>
+						<BoxShadowsTransition Duration="0:0:0.1" Property="BoxShadow" Easing="LinearEasing" />
+					</Transitions>
+				</Setter>
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialSlider" TargetType="Slider">
+
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<!-- Default Style -->
+	<!--<ControlTheme x:Key="{x:Type Slider}" TargetType="Slider" BasedOn="{StaticResource MaterialSlider}" />-->
+</ResourceDictionary>

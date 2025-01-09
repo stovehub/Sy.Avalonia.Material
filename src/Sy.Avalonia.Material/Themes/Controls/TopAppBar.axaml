@@ -1,0 +1,68 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:controls="using:Sy.Avalonia.Material.Controls"
+										xmlns:icons="using:Material.Icons.Avalonia">
+	<Design.PreviewWith>
+		<Border Background="{DynamicResource md.sys.brush.surface-variant}" Padding="16">
+			<StackPanel Orientation="Horizontal" Spacing="16">
+				<StackPanel Orientation="Vertical" Spacing="16" Width="400">
+					<controls:TopAppBar Title="Title Large" />
+					
+				</StackPanel>
+				<StackPanel Orientation="Vertical" Spacing="16" Width="400">
+
+
+				</StackPanel>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialTopAppBar" TargetType="controls:TopAppBar">
+		<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface}" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface}" />
+		
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.title-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.title-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.title-large.weight}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.title-large.line-height}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.title-large.tracking}" />
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid RowDefinitions="64, Auto" ColumnDefinitions="Auto, *, Auto"
+							Background="{TemplateBinding Background}"
+							ClipToBounds="True">
+					<Border Grid.RowSpan="2" Grid.ColumnSpan="3"
+									ClipToBounds="True" />
+					
+					<ContentPresenter x:Name="PART_Title" Grid.Column="1"
+														Content="{TemplateBinding Title}"
+														HorizontalContentAlignment="Center"
+														Theme="{TemplateBinding TitleTheme}"
+														VerticalContentAlignment="Center" />
+					
+					
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Variants -->
+		
+
+		<!-- States / Elevated -->
+		
+
+		<!-- Transitions -->
+
+		
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<!-- Default Styles -->
+	<ControlTheme x:Key="{x:Type controls:TopAppBar}" TargetType="controls:TopAppBar"
+								BasedOn="{StaticResource MaterialTopAppBar}" />
+	
+</ResourceDictionary>

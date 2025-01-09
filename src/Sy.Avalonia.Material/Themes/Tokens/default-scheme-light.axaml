@@ -1,0 +1,102 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Color x:Key="md.sys.color.primary">#68548E</Color>
+	<Color x:Key="md.sys.color.surface-tint">#68548E</Color>
+	<Color x:Key="md.sys.color.on-primary">#FFFFFF</Color>
+	<Color x:Key="md.sys.color.primary-container">#EBDDFF</Color>
+	<Color x:Key="md.sys.color.on-primary-container">#230F46</Color>
+	<Color x:Key="md.sys.color.secondary">#635B70</Color>
+	<Color x:Key="md.sys.color.on-secondary">#FFFFFF</Color>
+	<Color x:Key="md.sys.color.secondary-container">#E9dEF8</Color>
+	<Color x:Key="md.sys.color.on-secondary-container">#1F182B</Color>
+	<Color x:Key="md.sys.color.tertiary">#7E525D</Color>
+	<Color x:Key="md.sys.color.on-tertiary">#FFFFFF</Color>
+	<Color x:Key="md.sys.color.tertiary-container">#FFD9E1</Color>
+	<Color x:Key="md.sys.color.on-tertiary-container">#31101B</Color>
+	<Color x:Key="md.sys.color.error">#BA1A1A</Color>
+	<Color x:Key="md.sys.color.on-error">#FFFFFF</Color>
+	<Color x:Key="md.sys.color.error-container">#FFDAD6</Color>
+	<Color x:Key="md.sys.color.on-error-container">#410002</Color>
+	<Color x:Key="md.sys.color.background">#FEF7FF</Color>
+	<Color x:Key="md.sys.color.on-background">#1D1B20</Color>
+	<Color x:Key="md.sys.color.surface">#FEF7FF</Color>
+	<Color x:Key="md.sys.color.on-surface">#1D1B20</Color>
+	<Color x:Key="md.sys.color.surface-variant">#E7E0EB</Color>
+	<Color x:Key="md.sys.color.on-surface-variant">#49454E</Color>
+	<Color x:Key="md.sys.color.outline">#7A757F</Color>
+	<Color x:Key="md.sys.color.outline-variant">#CBC4CF</Color>
+	<Color x:Key="md.sys.color.shadow">#000000</Color>
+	<Color x:Key="md.sys.color.scrim">#000000</Color>
+	<Color x:Key="md.sys.color.inverse-surface">#322F35</Color>
+	<Color x:Key="md.sys.color.inverse-on-surface">#F5EFF7</Color>
+	<Color x:Key="md.sys.color.inverse-primary">#D3BCFD</Color>
+	<Color x:Key="md.sys.color.primary-fixed">#EBDDFF</Color>
+	<Color x:Key="md.sys.color.on-primary-fixed">#230F46</Color>
+	<Color x:Key="md.sys.color.primary-fixed-dim">#D3BCFD</Color>
+	<Color x:Key="md.sys.color.on-primary-fixed-variant">#4F3D74</Color>
+	<Color x:Key="md.sys.color.secondary-fixed">#E9DEF8</Color>
+	<Color x:Key="md.sys.color.on-secondary-fixed">#1F182B</Color>
+	<Color x:Key="md.sys.color.secondary-fixed-dim">#CDC2DB</Color>
+	<Color x:Key="md.sys.color.on-secondary-fixed-variant">#4B4358</Color>
+	<Color x:Key="md.sys.color.tertiary-fixed">#FFD9E1</Color>
+	<Color x:Key="md.sys.color.on-tertiary-fixed">#31101B</Color>
+	<Color x:Key="md.sys.color.tertiary-fixed-dim">#F0B7C5</Color>
+	<Color x:Key="md.sys.color.on-tertiary-fixed-variant">#643B46</Color>
+	<Color x:Key="md.sys.color.surface-dim">#DED8E0</Color>
+	<Color x:Key="md.sys.color.surface-bright">#FEF7FF</Color>
+	<Color x:Key="md.sys.color.surface-container-lowest">#FFFFFF</Color>
+	<Color x:Key="md.sys.color.surface-container-low">#F8F1FA</Color>
+	<Color x:Key="md.sys.color.surface-container">#F2ECF4</Color>
+	<Color x:Key="md.sys.color.surface-container-high">#EDE6EE</Color>
+	<Color x:Key="md.sys.color.surface-container-highest">#E7E0E8</Color>
+
+	<SolidColorBrush x:Key="md.sys.brush.primary" Color="{StaticResource md.sys.color.primary}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-tint" Color="{StaticResource md.sys.color.surface-tint}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-primary" Color="{StaticResource md.sys.color.on-primary}" />
+	<SolidColorBrush x:Key="md.sys.brush.primary-container" Color="{StaticResource md.sys.color.primary-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-primary-container" Color="{StaticResource md.sys.color.on-primary-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.secondary" Color="{StaticResource md.sys.color.secondary}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-secondary" Color="{StaticResource md.sys.color.on-secondary}" />
+	<SolidColorBrush x:Key="md.sys.brush.secondary-container" Color="{StaticResource md.sys.color.secondary-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-secondary-container" Color="{StaticResource md.sys.color.on-secondary-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.tertiary" Color="{StaticResource md.sys.color.tertiary}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-tertiary" Color="{StaticResource md.sys.color.on-tertiary}" />
+	<SolidColorBrush x:Key="md.sys.brush.tertiary-container" Color="{StaticResource md.sys.color.tertiary-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-tertiary-container" Color="{StaticResource md.sys.color.on-tertiary-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.error" Color="{StaticResource md.sys.color.error}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-error" Color="{StaticResource md.sys.color.on-error}" />
+	<SolidColorBrush x:Key="md.sys.brush.error-container" Color="{StaticResource md.sys.color.error-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-error-container" Color="{StaticResource md.sys.color.on-error-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.background" Color="{StaticResource md.sys.color.background}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-background" Color="{StaticResource md.sys.color.on-background}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface" Color="{StaticResource md.sys.color.surface}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-surface" Color="{StaticResource md.sys.color.on-surface}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-variant" Color="{StaticResource md.sys.color.surface-variant}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-surface-variant" Color="{StaticResource md.sys.color.on-surface-variant}" />
+	<SolidColorBrush x:Key="md.sys.brush.outline" Color="{StaticResource md.sys.color.outline}" />
+	<SolidColorBrush x:Key="md.sys.brush.outline-variant" Color="{StaticResource md.sys.color.outline-variant}" />
+	<SolidColorBrush x:Key="md.sys.brush.shadow" Color="{StaticResource md.sys.color.shadow}" />
+	<SolidColorBrush x:Key="md.sys.brush.scrim" Color="{StaticResource md.sys.color.scrim}" />
+	<SolidColorBrush x:Key="md.sys.brush.inverse-surface" Color="{StaticResource md.sys.color.inverse-surface}" />
+	<SolidColorBrush x:Key="md.sys.brush.inverse-on-surface" Color="{StaticResource md.sys.color.inverse-on-surface}" />
+	<SolidColorBrush x:Key="md.sys.brush.inverse-primary" Color="{StaticResource md.sys.color.inverse-primary}" />
+	<SolidColorBrush x:Key="md.sys.brush.primary-fixed" Color="{StaticResource md.sys.color.primary-fixed}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-primary-fixed" Color="{StaticResource md.sys.color.on-primary-fixed}" />
+	<SolidColorBrush x:Key="md.sys.brush.primary-fixed-dim" Color="{StaticResource md.sys.color.primary-fixed-dim}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-primary-fixed-variant" Color="{StaticResource md.sys.color.on-primary-fixed-variant}" />
+	<SolidColorBrush x:Key="md.sys.brush.secondary-fixed" Color="{StaticResource md.sys.color.secondary-fixed}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-secondary-fixed" Color="{StaticResource md.sys.color.on-secondary-fixed}" />
+	<SolidColorBrush x:Key="md.sys.brush.secondary-fixed-dim" Color="{StaticResource md.sys.color.secondary-fixed-dim}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-secondary-fixed-variant" Color="{StaticResource md.sys.color.on-secondary-fixed-variant}" />
+	<SolidColorBrush x:Key="md.sys.brush.tertiary-fixed" Color="{StaticResource md.sys.color.tertiary-fixed}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-tertiary-fixed" Color="{StaticResource md.sys.color.on-tertiary-fixed}" />
+	<SolidColorBrush x:Key="md.sys.brush.tertiary-fixed-dim" Color="{StaticResource md.sys.color.tertiary-fixed-dim}" />
+	<SolidColorBrush x:Key="md.sys.brush.on-tertiary-fixed-variant" Color="{StaticResource md.sys.color.on-tertiary-fixed-variant}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-dim" Color="{StaticResource md.sys.color.surface-dim}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-bright" Color="{StaticResource md.sys.color.surface-bright}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-container-lowest" Color="{StaticResource md.sys.color.surface-container-lowest}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-container-low" Color="{StaticResource md.sys.color.surface-container-low}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-container" Color="{StaticResource md.sys.color.surface-container}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-container-high" Color="{StaticResource md.sys.color.surface-container-high}" />
+	<SolidColorBrush x:Key="md.sys.brush.surface-container-highest" Color="{StaticResource md.sys.color.surface-container-highest}" />
+</ResourceDictionary>

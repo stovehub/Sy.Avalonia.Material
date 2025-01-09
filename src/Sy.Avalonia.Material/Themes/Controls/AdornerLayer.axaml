@@ -1,0 +1,25 @@
+<ResourceDictionary
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	
+	<ControlTheme x:Key="MaterialAdornerLayer" TargetType="AdornerLayer">
+		<Setter Property="DefaultFocusAdorner">
+			<FocusAdornerTemplate>
+				<!-- TODO -->
+				<!-- Change BorderBrush to {DynamicResource md.sys.brush.secondary} -->
+				<Border
+						BorderBrush="Red"
+						BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+						Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}" />
+			</FocusAdornerTemplate>
+		</Setter>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+
+	<!-- Default Style -->
+	<ControlTheme
+			x:Key="{x:Type AdornerLayer}"
+			TargetType="AdornerLayer"
+			BasedOn="{StaticResource MaterialAdornerLayer}" />
+</ResourceDictionary>

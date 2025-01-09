@@ -1,0 +1,128 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:mux="using:Sy.Avalonia.Material.Markup.Extensions"
+										xmlns:sys="using:System">
+	
+	<!-- NOTE: The md.ref.typescale.*.offset tokens are not from the Material Design spec -->
+	<!--       Text was clipped on the bottom, so offset values were found to realign them as  -->
+	<!--       close to the original as possible -->
+	
+	<!-- Reference -->
+	<FontFamily  x:Key="md.ref.typeface.plain">avares://Sy.Avalonia.Material/Fonts/Roboto/Roboto#Roboto,$Default</FontFamily>
+	<FontWeight  x:Key="md.ref.typeface.weight-regular">400</FontWeight>
+	<FontWeight  x:Key="md.ref.typeface.weight-medium">500</FontWeight>
+	<FontWeight  x:Key="md.ref.typeface.weight-bold">700</FontWeight>
+
+	<!-- Display -->
+	<mux:Alias   x:Key="md.sys.typescale.display-large.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.display-large.line-height">64</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.display-large.offset">12</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.display-large.size">57</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.display-large.tracking">-0.25</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.display-large.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<mux:Alias   x:Key="md.sys.typescale.display-medium.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.display-medium.line-height">52</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.display-medium.offset">10</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.display-medium.size">45</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.display-medium.tracking">0</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.display-medium.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<mux:Alias   x:Key="md.sys.typescale.display-small.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.display-small.line-height">44</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.display-small.offset">11</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.display-small.size">36</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.display-small.tracking">0</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.display-small.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<!-- Headline -->
+	<mux:Alias   x:Key="md.sys.typescale.headline-large.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.headline-large.line-height">40</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.headline-large.offset">5</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.headline-large.size">32</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.headline-large.tracking">0</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.headline-large.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<mux:Alias   x:Key="md.sys.typescale.headline-medium.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.headline-medium.line-height">36</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.headline-medium.offset">5</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.headline-medium.size">28</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.headline-medium.tracking">0</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.headline-medium.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<mux:Alias   x:Key="md.sys.typescale.headline-small.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.headline-small.line-height">32</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.headline-small.offset">5</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.headline-small.size">24</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.headline-small.tracking">0</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.headline-small.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<!-- Title -->
+	<mux:Alias   x:Key="md.sys.typescale.title-large.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.title-large.line-height">28</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.title-large.offset">4</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.title-large.size">22</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.title-large.tracking">0</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.title-large.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<mux:Alias   x:Key="md.sys.typescale.title-medium.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.title-medium.line-height">24</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.title-medium.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.title-medium.size">16</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.title-medium.tracking">0.15</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.title-medium.weight" ResourceKey="md.ref.typeface.weight-medium" />
+
+	<mux:Alias   x:Key="md.sys.typescale.title-small.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.title-small.line-height">20</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.title-small.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.title-small.size">14</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.title-small.tracking">0.1</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.title-small.weight" ResourceKey="md.ref.typeface.weight-medium" />
+
+	<!-- Body -->
+	<mux:Alias   x:Key="md.sys.typescale.body-large.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.body-large.line-height">24</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.body-large.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.body-large.size">16</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.body-large.tracking">0.5</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.body-large.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<mux:Alias   x:Key="md.sys.typescale.body-medium.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.body-medium.line-height">20</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.body-medium.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.body-medium.size">14</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.body-medium.tracking">0.25</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.body-medium.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<mux:Alias   x:Key="md.sys.typescale.body-small.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.body-small.line-height">16</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.body-small.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.body-small.size">12</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.body-small.tracking">0.4</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.body-small.weight" ResourceKey="md.ref.typeface.weight-regular" />
+
+	<!-- Label -->
+	<mux:Alias   x:Key="md.sys.typescale.label-large.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.label-large.line-height">20</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.label-large.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.label-large.size">14</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.label-large.tracking">0.1</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.label-large.weight" ResourceKey="md.ref.typeface.weight-medium" />
+	<mux:Alias   x:Key="md.sys.typescale.label-large.weight.prominent" ResourceKey="md.ref.typeface.weight-bold" />
+
+	<mux:Alias   x:Key="md.sys.typescale.label-medium.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.label-medium.line-height">16</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.label-medium.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.label-medium.size">12</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.label-medium.tracking">0.5</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.label-medium.weight" ResourceKey="md.ref.typeface.weight-medium" />
+	<mux:Alias   x:Key="md.sys.typescale.label-medium.weight.prominent" ResourceKey="md.ref.typeface.weight-bold" />
+
+	<mux:Alias   x:Key="md.sys.typescale.label-small.font" ResourceKey="md.ref.typeface.plain" />
+	<sys:Double   x:Key="md.sys.typescale.label-small.line-height">16</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.label-small.offset">2</sys:Double>
+	<sys:Double   x:Key="md.sys.typescale.label-small.size">11</sys:Double>
+	<sys:Double  x:Key="md.sys.typescale.label-small.tracking">0.5</sys:Double>
+	<mux:Alias   x:Key="md.sys.typescale.label-small.weight" ResourceKey="md.ref.typeface.weight-medium" />
+	<mux:Alias   x:Key="md.sys.typescale.label-small.weight.prominent" ResourceKey="md.ref.typeface.weight-bold" />
+</ResourceDictionary>

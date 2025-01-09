@@ -1,0 +1,118 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:c="using:Sy.Avalonia.Material.Controls">
+	<Design.PreviewWith>
+		<Border 
+				Background="White" 
+				Padding="64"
+				TextElement.FontFamily="Roboto"
+				TextElement.FontSize="16"
+				TextElement.FontWeight="Medium"
+				TextBlock.LetterSpacing="0.1">
+			<StackPanel Orientation="Vertical" Spacing="40">
+				<Border 
+						Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						Padding="40">
+					<Border 
+							Background="{DynamicResource md.sys.brush.primary}"
+							CornerRadius="16"
+							Height="64"
+							Width="128">
+						<Panel>
+							<c:StateLayer 
+									CornerRadius="16"
+									FeedbackBrush="{DynamicResource md.sys.brush.on-primary}"
+									FeedbackOpacity="0.1"
+									StateBrush="{DynamicResource md.sys.brush.on-primary}" />
+							<Label 
+									Content="Click me!"
+									Foreground="{DynamicResource md.sys.brush.on-primary}"
+									HorizontalContentAlignment="Center"
+									IsHitTestVisible="False"
+									VerticalContentAlignment="Center" />
+						</Panel>
+					</Border>
+				</Border>
+
+				<Border 
+						Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						Padding="40"
+						c:StateLayer.RconSource="{Binding $self}">
+					<Border 
+							Background="{DynamicResource md.sys.brush.primary}"
+							CornerRadius="16"
+							Height="64"
+							Width="128">
+						<Panel>
+							<c:StateLayer 
+									CornerRadius="16"
+									FeedbackBrush="{DynamicResource md.sys.brush.on-primary}"
+									FeedbackOpacity="0.1"
+									StateBrush="{DynamicResource md.sys.brush.on-primary}" />
+							<Label 
+									Content="Rcon!"
+									Foreground="{DynamicResource md.sys.brush.on-primary}"
+									HorizontalContentAlignment="Center"
+									IsHitTestVisible="False"
+									VerticalContentAlignment="Center" />
+						</Panel>
+					</Border>
+				</Border>
+			</StackPanel>
+
+			<Border.Styles>
+				<!-- States / Focused -->
+				<Style Selector="c|StateLayer:focus">
+					<Setter Property="IsFocusedState" Value="True" />
+				</Style>
+
+				<!-- States / Hovered -->
+				<Style Selector="c|StateLayer:pointerover">
+					<Setter Property="IsHoveredState" Value="True" />
+				</Style>
+			</Border.Styles>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type c:StateLayer}" TargetType="c:StateLayer">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel x:Name="PART_Root">
+					<Border 
+							x:Name="PART_Background"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"/>
+					<Border 
+							x:Name="PART_StateLayer"
+							Background="{TemplateBinding StateBrush}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Opacity="{TemplateBinding StateOpacity}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^[IsCapturingOutsideCornerRadius=True] /template/ Panel#PART_Root">
+			<Setter Property="Background" Value="Transparent" />
+		</Style>
+
+		<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=True]">
+			<Setter Property="Transitions">
+				<Transitions>
+					<DoubleTransition Duration="0:0:0.1" Property="StateOpacity" Easing="LinearEasing" />
+				</Transitions>
+			</Setter>
+		</Style>
+
+		<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=False]">
+			<Setter Property="IsFeedbackEnabled" Value="False"/>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

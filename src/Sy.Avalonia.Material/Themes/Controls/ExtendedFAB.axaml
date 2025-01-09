@@ -1,0 +1,231 @@
+<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="using:Sy.Avalonia.Material.Controls"
+		xmlns:i="using:Material.Icons.Avalonia">
+	
+	<Design.PreviewWith>
+		<Border Background="White" Padding="32">
+			<!-- Extended FABs -->
+			<Border
+					Background="{DynamicResource md.sys.brush.surface}"
+					BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+					BorderThickness="1"
+					CornerRadius="16"
+					HorizontalAlignment="Left"
+					Padding="32">
+				<StackPanel Spacing="32">
+					<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Extended FABs" />
+
+					<StackPanel Orientation="Horizontal" Spacing="32">
+						<Button Classes="surface" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="surface debug-hover" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="surface debug-focus" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="surface debug-pressed" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="surface" Content="Label" IsEnabled="False" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal" Spacing="32">
+						<Button Classes="primary" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="primary debug-hover" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="primary debug-focus" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="primary debug-pressed" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="primary" Content="Label" IsEnabled="False" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal" Spacing="32">
+						<Button Classes="secondary" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="secondary debug-hover" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="secondary debug-focus" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="secondary debug-pressed" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="secondary" Content="Label" IsEnabled="False" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+					</StackPanel>
+
+					<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="Lowered" />
+
+					<StackPanel Orientation="Horizontal" Spacing="32">
+						<Button Classes="tertiary lowered" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="tertiary lowered debug-hover" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="tertiary lowered debug-focus" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="tertiary lowered debug-pressed" Content="Label" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+						<Button Classes="tertiary lowered" Content="Label" IsEnabled="False" Theme="{StaticResource MaterialExtendedFAB}" c:ButtonHelper.Icon="PencilOutline" />
+					</StackPanel>
+				</StackPanel>
+			</Border>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialExtendedFAB" TargetType="Button">
+		<Setter Property="Background" Value="{DynamicResource md.sys.color.primary-container}" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-primary-container}" />
+		<Setter Property="Height" Value="{DynamicResource md.comp.xfab.default.container.height}" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="MinWidth" Value="{DynamicResource md.comp.xfab.default.container.min-width}" />
+		<Setter Property="Padding" Value="{DynamicResource md.comp.xfab.default.container.padding}" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.label-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.label-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.label-large.weight}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.label-large.line-height}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.label-large.tracking}" />
+		
+		<Setter Property="c:ControlHelper.ContentCharacterCasing" Value="{DynamicResource md.comp.button.default.label.casing}" />
+		<Setter Property="c:ButtonHelper.IsIconVisible" Value="True" />
+		<Setter Property="c:ShadowHelper.Color" Value="{DynamicResource md.sys.brush.shadow}" />
+		<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level3}" />
+		<Setter Property="c:ShapeHelper.Shape" Value="{DynamicResource md.comp.xfab.default.container.shape}" />
+
+		<Setter Property="FocusAdorner">
+			<FocusAdornerTemplate>
+				<Border 
+						BorderBrush="{DynamicResource md.sys.brush.secondary}"
+						BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+						Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+						c:ShapeHelper.Shape="{DynamicResource md.comp.xfab.default.container.shape}" />
+			</FocusAdornerTemplate>
+		</Setter>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border 
+							x:Name="PART_Container"
+							Background="{TemplateBinding Background}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							c:ShadowHelper.Color="{TemplateBinding c:ShadowHelper.Color}"
+							c:ShadowHelper.Elevation="{TemplateBinding c:ShadowHelper.Elevation}" />
+					<c:StateLayer 
+							x:Name="PART_StateLayer"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							FeedbackBrush="{TemplateBinding Foreground}"
+							FeedbackOpacity="{DynamicResource md.sys.state.pressed.state-layer-opacity}"
+							FocusOpacity="{DynamicResource md.sys.state.focus.state-layer-opacity}"
+							HoverOpacity="{DynamicResource md.sys.state.hover.state-layer-opacity}"
+							StateBrush="{TemplateBinding Foreground}" />
+					<ContentControl 
+							x:Name="PART_Body"
+							HorizontalContentAlignment="Center"
+							IsHitTestVisible="False"
+							Padding="{TemplateBinding Padding}"
+							VerticalContentAlignment="Center">
+						<StackPanel 
+								Orientation="Horizontal"
+								Spacing="{DynamicResource md.comp.button.default.container.spacing}">
+							<i:MaterialIcon 
+									x:Name="PART_Icon"
+									Height="{DynamicResource md.comp.fab.default.icon.size}"
+									IsVisible="{TemplateBinding c:ButtonHelper.IsIconVisible}"
+									Kind="{TemplateBinding c:ButtonHelper.Icon}"
+									Width="{DynamicResource md.comp.fab.default.icon.size}" />
+							<c:ContentPresenterEx 
+									x:Name="PART_ContentPresenter"
+									Content="{TemplateBinding Content}"
+									ContentCharacterCasing="{TemplateBinding c:ControlHelper.ContentCharacterCasing}"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+									RecognizesAccessKey="True"
+									VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+						</StackPanel>
+					</ContentControl>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Color -->
+		<Style Selector="^:not(:disabled)">
+			<Style Selector="^.secondary">
+				<Setter Property="Background" Value="{DynamicResource md.sys.color.secondary-container}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-secondary-container}" />
+			</Style>
+
+			<Style Selector="^.tertiary">
+				<Setter Property="Background" Value="{DynamicResource md.sys.color.tertiary-container}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-tertiary-container}" />
+			</Style>
+
+			<Style Selector="^.surface">
+				<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-container-high}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.primary}" />
+			</Style>
+		</Style>
+
+		<!-- Variants -->
+		<Style Selector="^:not(:disabled)">
+			<Style Selector="^.lowered">
+				<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level1}" />
+			</Style>
+		</Style>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource md.sys.brush.on-surface}" />
+			<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface}" />
+			<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level0}" />
+
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.button.disabled.container.opacity}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentControl#PART_Body">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.button.disabled.label.opacity}" />
+			</Style>
+		</Style>
+
+		<!-- States / Hovered -->
+		<Style Selector="^:pointerover, ^.debug-hover">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsHoveredState" Value="True" />
+			</Style>
+
+			<Style Selector="^.lowered">
+				<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level2}" />
+			</Style>
+			
+			<Style Selector="^:not(.lowered)">
+				<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level4}" />
+			</Style>
+		</Style>
+
+		<!-- States / Focused -->
+		<Style Selector="^:focus, ^.debug-focus">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsFocusedState" Value="True" />
+			</Style>
+		</Style>
+
+		<!-- States / Pressed -->
+		<Style Selector="^:pressed, ^.debug-pressed">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsPressedState" Value="True" />
+			</Style>
+
+			<Style Selector="^.lowered">
+				<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level1}" />
+			</Style>
+
+			<Style Selector="^:not(.lowered)">
+				<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level3}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.debug-pressed /template/ c|StateLayer#PART_StateLayer">
+			<Setter Property="IsFeedbackEnabled" Value="False" />
+		</Style>
+
+		<!-- Transitions -->
+		<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=True]">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Transitions">
+					<Transitions>
+						<BoxShadowsTransition Duration="0:0:0.1" Property="BoxShadow" Easing="LinearEasing" />
+					</Transitions>
+				</Setter>
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

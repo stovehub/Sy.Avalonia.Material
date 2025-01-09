@@ -1,0 +1,27 @@
+<Styles xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				x:ClassModifier="public">
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<!-- Material Controls -->
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/Card.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/Ripple.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/StateLayer.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/TopAppBar.axaml" />
+
+				<!-- Native Controls -->
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/AdornerLayer.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/Button.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/ExtendedFAB.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/FAB.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/IconButton.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/ProgressBar.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/ScrollBar.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/ScrollViewer.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/SegmentedButton.axaml" />
+				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Controls/ToolTip.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Styles.Resources>
+</Styles>

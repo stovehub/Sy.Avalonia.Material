@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A6DC1A1B-930E-42C3-89C1-F3B3BC19D75D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{864375F1-1654-41D1-97DB-4FDA66ABF0F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{C766AE78-0638-400F-AE6E-F1EC7967EE9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialDemo", "samples\MaterialDemo\MaterialDemo.csproj", "{514855CB-0B07-43C1-B76C-95B50E1C1DD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialDemo.Browser", "samples\MaterialDemo.Browser\MaterialDemo.Browser.csproj", "{F65AF538-32D1-40CC-B2F7-001022589DF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialDemo.Desktop", "samples\MaterialDemo.Desktop\MaterialDemo.Desktop.csproj", "{BFFC533A-448F-4845-BB0E-C4E57A6FBFD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sy.Avalonia.Material", "src\Sy.Avalonia.Material\Sy.Avalonia.Material.csproj", "{FC6D9E48-4638-437E-B176-40087876CA03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{514855CB-0B07-43C1-B76C-95B50E1C1DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514855CB-0B07-43C1-B76C-95B50E1C1DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514855CB-0B07-43C1-B76C-95B50E1C1DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514855CB-0B07-43C1-B76C-95B50E1C1DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65AF538-32D1-40CC-B2F7-001022589DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65AF538-32D1-40CC-B2F7-001022589DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65AF538-32D1-40CC-B2F7-001022589DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65AF538-32D1-40CC-B2F7-001022589DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFFC533A-448F-4845-BB0E-C4E57A6FBFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFC533A-448F-4845-BB0E-C4E57A6FBFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFC533A-448F-4845-BB0E-C4E57A6FBFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFFC533A-448F-4845-BB0E-C4E57A6FBFD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6D9E48-4638-437E-B176-40087876CA03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6D9E48-4638-437E-B176-40087876CA03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6D9E48-4638-437E-B176-40087876CA03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6D9E48-4638-437E-B176-40087876CA03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{514855CB-0B07-43C1-B76C-95B50E1C1DD5} = {C766AE78-0638-400F-AE6E-F1EC7967EE9A}
+		{F65AF538-32D1-40CC-B2F7-001022589DF0} = {C766AE78-0638-400F-AE6E-F1EC7967EE9A}
+		{BFFC533A-448F-4845-BB0E-C4E57A6FBFD8} = {C766AE78-0638-400F-AE6E-F1EC7967EE9A}
+		{FC6D9E48-4638-437E-B176-40087876CA03} = {A6DC1A1B-930E-42C3-89C1-F3B3BC19D75D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F337B23C-2077-4814-B07B-93FD177060D9}
+	EndGlobalSection
+EndGlobal

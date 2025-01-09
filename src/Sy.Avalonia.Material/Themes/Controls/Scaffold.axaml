@@ -1,0 +1,25 @@
+<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:controls="using:Sy.Avalonia.Material.Controls"
+		xmlns:icons="using:Material.Icons.Avalonia">
+	
+	<Design.PreviewWith>
+		<Border Padding="16" Background="{DynamicResource md.sys.brush.surface}">
+			<StackPanel Orientation="Vertical" Spacing="16">
+				
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialScaffold" TargetType="Button">
+		
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<!-- Default Style -->
+
+</ResourceDictionary>

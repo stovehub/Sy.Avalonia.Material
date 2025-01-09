@@ -1,0 +1,220 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+				 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				 xmlns:c="using:Sy.Avalonia.Material.Controls">
+	<Design.PreviewWith>
+		<Border Background="White" Padding="32">
+			<StackPanel Spacing="32" VerticalAlignment="Top">
+				<!-- Display -->
+				<Border
+						BorderBrush="{DynamicResource md.ref.palette.neutral-variant50}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="24">
+					<StackPanel Orientation="Vertical" Spacing="24">
+						<TextBlock Classes="display-large" Text="Display Large" />
+						<TextBlock Classes="display-medium" Text="Display Medium" />
+						<TextBlock Classes="display-small" Text="Display Small" />
+					</StackPanel>
+				</Border>
+
+				<!-- Headline -->
+				<Border
+						BorderBrush="{DynamicResource md.ref.palette.neutral-variant50}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="24">
+					<StackPanel Orientation="Vertical" Spacing="24">
+						<TextBlock Classes="headline-large" Text="Headline Large" />
+						<TextBlock Classes="headline-medium" Text="Headline Medium" />
+						<TextBlock Classes="headline-small" Text="Headline Small" />
+					</StackPanel>
+				</Border>
+
+				<!-- Title -->
+				<Border
+						BorderBrush="{DynamicResource md.ref.palette.neutral-variant50}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="24">
+					<StackPanel Orientation="Vertical" Spacing="24">
+						<TextBlock Classes="title-large" Text="Title Large" />
+						<TextBlock Classes="title-medium" Text="Title Medium" />
+						<TextBlock Classes="title-small" Text="Title Small" />
+					</StackPanel>
+				</Border>
+
+				<!-- Label -->
+				<Border
+						BorderBrush="{DynamicResource md.ref.palette.neutral-variant50}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="24">
+					<StackPanel Orientation="Vertical" Spacing="24">
+						<TextBlock Classes="label-large" Text="Label Large" />
+						<TextBlock Classes="label-medium" Text="Label Medium" />
+						<TextBlock Classes="label-small" Text="Label Small" />
+					</StackPanel>
+				</Border>
+
+				<!-- Body -->
+				<Border
+						BorderBrush="{DynamicResource md.ref.palette.neutral-variant50}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="24">
+					<StackPanel Orientation="Vertical" Spacing="24">
+						<TextBlock Classes="body-large" Text="Body Large" />
+						<TextBlock Classes="body-medium" Text="Body Medium" />
+						<TextBlock Classes="body-small" Text="Body Small" />
+					</StackPanel>
+				</Border>
+
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- Display -->
+	<Style Selector=":is(Control).display-large">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.display-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.display-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.display-large.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.display-large.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.display-large.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.display-large.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).display-medium">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.display-medium.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.display-medium.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.display-medium.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.display-medium.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.display-medium.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.display-medium.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).display-small">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.display-small.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.display-small.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.display-small.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.display-small.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.display-small.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.display-small.offset}" />
+	</Style>
+
+	<!-- Headline -->
+	<Style Selector=":is(Control).headline-large">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.headline-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.headline-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.headline-large.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.headline-large.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.headline-large.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.headline-large.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).headline-medium">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.headline-medium.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.headline-medium.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.headline-medium.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.headline-medium.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.headline-medium.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.headline-medium.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).headline-small">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.headline-small.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.headline-small.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.headline-small.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.headline-small.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.headline-small.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.headline-small.offset}" />
+	</Style>
+
+	<!-- Title -->
+	<Style Selector=":is(Control).title-large">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.title-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.title-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.title-large.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.title-large.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.title-large.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.title-large.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).title-medium">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.title-medium.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.title-medium.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.title-medium.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.title-medium.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.title-medium.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.title-medium.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).title-small">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.title-small.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.title-small.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.title-small.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.title-small.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.title-small.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.title-small.offset}" />
+	</Style>
+
+	<!-- Body -->
+	<Style Selector=":is(Control).body-large">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.body-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.body-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.body-large.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.body-large.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.body-large.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.body-large.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).body-medium">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.body-medium.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.body-medium.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.body-medium.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.body-medium.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.body-medium.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.body-medium.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).body-small">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.body-small.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.body-small.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.body-small.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.body-small.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.body-small.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.body-small.offset}" />
+	</Style>
+
+	<!-- Label -->
+	<Style Selector=":is(Control).label-large">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.label-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.label-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.label-large.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.label-large.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.label-large.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.label-large.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).label-medium">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.label-medium.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.label-medium.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.label-medium.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.label-medium.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.label-medium.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.label-medium.offset}" />
+	</Style>
+
+	<Style Selector=":is(Control).label-small">
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.label-small.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.label-small.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.label-small.weight}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.label-small.tracking}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.label-small.line-height}" />
+		<Setter Property="c:TextHelper.BaselineOffset" Value="{DynamicResource md.sys.typescale.label-small.offset}" />
+	</Style>
+</Styles>

@@ -1,0 +1,263 @@
+<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="using:Sy.Avalonia.Material.Controls"
+		xmlns:i="using:Material.Icons.Avalonia">
+	
+	<Design.PreviewWith>
+		<Border Padding="32" Background="{DynamicResource md.sys.brush.surface}">
+			<c:SegmentedButtonHost Orientation="Horizontal">
+				<Button Content="Button" />
+				<Button Content="Disabled" IsEnabled="False" />
+				<ToggleButton Content="Toggle" IsChecked="True" c:ButtonHelper.IsIconVisible="True"/>
+				<RadioButton Content="Radio1" />
+				<RadioButton Content="Radio2" IsChecked="True" />
+			</c:SegmentedButtonHost>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialSegmentedButtonHost" TargetType="c:SegmentedButtonHost">
+		<Setter Property="ChildControlTheme" Value="{StaticResource MaterialSegmentedButton}" />
+	</ControlTheme>
+
+	<!-- ######################################################################################## -->
+
+	<!-- Default Style -->
+	<ControlTheme 
+			x:Key="{x:Type c:SegmentedButtonHost}"
+			TargetType="c:SegmentedButtonHost"
+			BasedOn="{StaticResource MaterialSegmentedButtonHost}" />
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialSegmentedButton" TargetType="Button">
+		<Setter Property="BorderBrush" Value="{DynamicResource md.sys.color.outline}" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-surface}" />
+		<Setter Property="Height" Value="{DynamicResource md.comp.button.default.container.height}" />
+		<Setter Property="MinWidth" Value="64" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="{DynamicResource md.comp.sbutton.default.container.padding}" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource md.sys.typescale.label-large.font}" />
+		<Setter Property="TextElement.FontSize" Value="{DynamicResource md.sys.typescale.label-large.size}" />
+		<Setter Property="TextElement.FontWeight" Value="{DynamicResource md.sys.typescale.label-large.weight}" />
+		<Setter Property="TextBlock.LineHeight" Value="{DynamicResource md.sys.typescale.label-large.line-height}" />
+		<Setter Property="TextBlock.LetterSpacing" Value="{DynamicResource md.sys.typescale.label-large.tracking}" />
+
+		<Setter Property="c:ControlHelper.ContentCharacterCasing" Value="{DynamicResource md.comp.button.default.label.casing}" />
+		<Setter Property="c:ShapeHelper.Shape" Value="{DynamicResource md.comp.button.default.container.shape}" />
+		<Setter Property="c:ToggleButtonHelper.CheckedIcon" Value="Check" />
+		<Setter Property="c:ToggleButtonHelper.IsCheckedIconVisible" Value="True" />
+		
+		<Setter Property="FocusAdorner">
+			<FocusAdornerTemplate>
+				<Border 
+						BorderBrush="{DynamicResource md.sys.brush.secondary}"
+						BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+						Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+						c:ShapeHelper.Shape="{DynamicResource md.comp.button.default.container.shape}" />
+			</FocusAdornerTemplate>
+		</Setter>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border 
+							x:Name="PART_Container"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="1"
+							CornerRadius="{TemplateBinding CornerRadius}" />
+					<c:StateLayer 
+							x:Name="PART_StateLayer"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							FeedbackBrush="{TemplateBinding Foreground}"
+							FeedbackOpacity="{DynamicResource md.sys.state.pressed.state-layer-opacity}"
+							FocusOpacity="{DynamicResource md.sys.state.focus.state-layer-opacity}"
+							HoverOpacity="{DynamicResource md.sys.state.hover.state-layer-opacity}"
+							StateBrush="{TemplateBinding Foreground}" />
+					<ContentControl 
+							x:Name="PART_Body"
+							HorizontalContentAlignment="Center"
+							IsHitTestVisible="False"
+							Padding="{TemplateBinding Padding}"
+							VerticalContentAlignment="Center">
+						<StackPanel 
+								Orientation="Horizontal"
+								Spacing="{DynamicResource md.comp.button.default.container.spacing}">
+							<c:MaterialIconEx 
+									x:Name="PART_Icon"
+									CheckedIcon="{TemplateBinding c:ToggleButtonHelper.CheckedIcon}"
+									Height="{DynamicResource md.comp.button.default.icon.size}"
+									IndeterminateIcon="{TemplateBinding c:ToggleButtonHelper.IndeterminateIcon}"
+									IsChecked="{TemplateBinding ToggleButton.IsChecked}"
+									IsCheckedVisible="{TemplateBinding c:ToggleButtonHelper.IsCheckedIconVisible}"
+									IsIndeterminateVisible="{TemplateBinding c:ToggleButtonHelper.IsIndeterminateIconVisible}"
+									IsUncheckedVisible="{TemplateBinding c:ButtonHelper.IsIconVisible}"
+									UncheckedIcon="{TemplateBinding c:ButtonHelper.Icon}"
+									Width="{DynamicResource md.comp.button.default.icon.size}" />
+							<c:ContentPresenterEx 
+									x:Name="PART_ContentPresenter"
+									Content="{TemplateBinding Content}"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									ContentCharacterCasing="{TemplateBinding c:ControlHelper.ContentCharacterCasing}"
+									HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+									RecognizesAccessKey="True"
+									VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+						</StackPanel>
+					</ContentControl>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Variants / Horizontal Orientation -->
+		<Style Selector="^.horizontal">
+			<Style Selector="^.first">
+				<Setter Property="c:ShapeHelper.ShapeMask" Value="C 0 0 C" />
+
+				<Setter Property="FocusAdorner">
+					<FocusAdornerTemplate>
+						<Border 
+								BorderBrush="{DynamicResource md.sys.brush.secondary}"
+								BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+								Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+								c:ShapeHelper.Shape="{DynamicResource md.comp.button.default.container.shape}"
+								c:ShapeHelper.ShapeMask="C 0 0 C" />
+					</FocusAdornerTemplate>
+				</Setter>
+			</Style>
+
+			<Style Selector="^.body">
+				<Setter Property="Margin" Value="-1 0 0 0" />
+				<Setter Property="c:ShapeHelper.ShapeMask" Value="0" />
+
+				<Setter Property="FocusAdorner">
+					<FocusAdornerTemplate>
+						<Border 
+								BorderBrush="{DynamicResource md.sys.brush.secondary}"
+								BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+								Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+								c:ShapeHelper.Shape="{DynamicResource md.comp.button.default.container.shape}"
+								c:ShapeHelper.ShapeMask="0"  />
+					</FocusAdornerTemplate>
+				</Setter>
+			</Style>
+
+			<Style Selector="^.last">
+				<Setter Property="Margin" Value="-1 0 0 0" />
+				<Setter Property="c:ShapeHelper.ShapeMask" Value="0 C C 0" />
+
+				<Setter Property="FocusAdorner">
+					<FocusAdornerTemplate>
+						<Border 
+								BorderBrush="{DynamicResource md.sys.brush.secondary}"
+								BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+								Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+								c:ShapeHelper.Shape="{DynamicResource md.comp.button.default.container.shape}"
+								c:ShapeHelper.ShapeMask="0 C C 0"  />
+					</FocusAdornerTemplate>
+				</Setter>
+			</Style>
+		</Style>
+
+		<!-- Variants / Vertical Orientation -->
+		<Style Selector="^.vertical">
+			<Style Selector="^.first">
+				<Setter Property="c:ShapeHelper.ShapeMask" Value="C 0" />
+
+				<Setter Property="FocusAdorner">
+					<FocusAdornerTemplate>
+						<Border 
+								BorderBrush="{DynamicResource md.sys.brush.secondary}"
+								BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+								Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+								c:ShapeHelper.Shape="{DynamicResource md.comp.button.default.container.shape}"
+								c:ShapeHelper.ShapeMask="C 0"  />
+					</FocusAdornerTemplate>
+				</Setter>
+			</Style>
+
+			<Style Selector="^.body">
+				<Setter Property="Margin" Value="0 -1 0 0" />
+				<Setter Property="c:ShapeHelper.ShapeMask" Value="0" />
+
+				<Setter Property="FocusAdorner">
+					<FocusAdornerTemplate>
+						<Border 
+								BorderBrush="{DynamicResource md.sys.brush.secondary}"
+								BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+								Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+								c:ShapeHelper.Shape="{DynamicResource md.comp.button.default.container.shape}"
+								c:ShapeHelper.ShapeMask="0"  />
+					</FocusAdornerTemplate>
+				</Setter>
+			</Style>
+
+			<Style Selector="^.last">
+				<Setter Property="Margin" Value="0 -1 0 0" />
+				<Setter Property="c:ShapeHelper.ShapeMask" Value="0 C" />
+
+				<Setter Property="FocusAdorner">
+					<FocusAdornerTemplate>
+						<Border 
+								BorderBrush="{DynamicResource md.sys.brush.secondary}"
+								BorderThickness="{DynamicResource md.sys.state.focus-indicator.thickness}"
+								Margin="{DynamicResource md.sys.state.focus-indicator.outer-offset}"
+								c:ShapeHelper.Shape="{DynamicResource md.comp.button.default.container.shape}"
+								c:ShapeHelper.ShapeMask="0 C"  />
+					</FocusAdornerTemplate>
+				</Setter>
+			</Style>
+		</Style>
+
+		<!-- States / Checked -->
+		<Style Selector="^:checked">
+			<Setter Property="Background" Value="{DynamicResource md.sys.color.secondary-container}" />
+			<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-secondary-container}" />
+		</Style>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Setter Property="BorderBrush" Value="{DynamicResource md.sys.brush.on-surface}" />
+			<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface}" />
+
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.button.disabled.container.opacity}" />
+			</Style>
+
+			<Style Selector="^ /template/ Panel#PART_Body">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.button.disabled.label.opacity}" />
+			</Style>
+		</Style>
+
+		<!-- States / Hovered -->
+		<Style Selector="^:pointerover, ^.debug-hover">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsHoveredState" Value="True" />
+			</Style>
+		</Style>
+
+		<!-- States / Focused -->
+		<Style Selector="^:focus, ^.debug-focus">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsFocusedState" Value="True" />
+			</Style>
+		</Style>
+
+		<!-- States / Pressed -->
+		<Style Selector="^:pressed, ^.debug-pressed">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsPressedState" Value="True" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.debug-pressed /template/ c|StateLayer#PART_StateLayer">
+			<Setter Property="IsFeedbackEnabled" Value="False" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

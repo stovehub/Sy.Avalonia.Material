@@ -1,0 +1,364 @@
+<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="using:Sy.Avalonia.Material.Controls"
+		xmlns:i="using:Material.Icons.Avalonia">
+	
+	<Design.PreviewWith>
+		<Border Background="White" Padding="32">
+			<StackPanel Spacing="32">
+				<!-- Standard -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Standard Icon Buttons" />
+
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<Button BorderBrush="{DynamicResource md.sys.brush.outline-variant}" BorderThickness="1" Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+						</StackPanel>
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="Toggle" />
+						
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+
+						<StackPanel Margin="0 -24 0 0" Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" IsChecked="True" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" IsChecked="True" Theme="{StaticResource MaterialIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+
+				<!-- Filled -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Filled Icon Buttons" />
+
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<Button Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+						</StackPanel>
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="Toggle" />
+						
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+
+						<StackPanel Margin="0 -24 0 0" Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" IsChecked="True" Theme="{StaticResource MaterialFilledIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+
+				<!-- Filled Tonal -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Filled Tonal Icon Buttons" />
+
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<Button Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+						</StackPanel>
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="Toggle" />
+						
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+
+						<StackPanel Margin="0 -24 0 0" Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" IsChecked="True" Theme="{StaticResource MaterialFilledTonalIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+
+				<!-- Outlined -->
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Outlined Icon Buttons" />
+
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<Button Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+							<Button Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" />
+						</StackPanel>
+
+						<TextBlock Classes="label-medium" Margin="0 0 0 -16" Text="Toggle" />
+
+						<StackPanel Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+
+						<StackPanel Margin="0 -24 0 0" Orientation="Horizontal" Spacing="16">
+							<ToggleButton Content="Settings" IsChecked="True" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-hover" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-focus" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Classes="debug-pressed" Content="Settings" IsChecked="True" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+							<ToggleButton Content="Settings" IsEnabled="False" IsChecked="True" Theme="{StaticResource MaterialOutlinedIconButton}" c:ButtonHelper.Icon="SettingsOutline" c:ToggleButtonHelper.CheckedIcon="Settings" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ######################################################################################## -->
+
+	<ControlTheme x:Key="MaterialIconButtonBase" TargetType="Button">
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Height" Value="{DynamicResource md.comp.ibutton.default.target.size}" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Width" Value="{DynamicResource md.comp.ibutton.default.target.size}" />
+		
+		<Setter Property="ToolTip.Placement" Value="Bottom" />
+		<Setter Property="ToolTip.Tip" Value="{Binding $self.Content}" />
+		<Setter Property="ToolTip.VerticalOffset" Value="8" />
+		
+		<Setter Property="c:ShapeHelper.Shape" Value="{DynamicResource md.comp.ibutton.default.container.shape}" />
+		<Setter Property="c:StateLayer.RconSource" Value="{Binding $self}" />
+		<Setter Property="c:StateLayer.RconTargetName" Value="PART_StateLayer" />
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border 
+						x:Name="PART_Target"
+						Background="Transparent"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+					<Panel>
+						<Border 
+								x:Name="PART_Container"
+								Background="{TemplateBinding Background}"
+								Height="{DynamicResource md.comp.ibutton.default.container.size}"
+								Width="{DynamicResource md.comp.ibutton.default.container.size}"
+								c:ShadowHelper.Elevation="{TemplateBinding c:ShadowHelper.Elevation}"
+								c:ShapeHelper.Shape="{TemplateBinding c:ShapeHelper.Shape}" />
+						<c:StateLayer 
+								x:Name="PART_StateLayer"
+								FeedbackBrush="{TemplateBinding Foreground}"
+								FeedbackOpacity="{DynamicResource md.sys.state.pressed.state-layer-opacity}"
+								FocusOpacity="{DynamicResource md.sys.state.focus.state-layer-opacity}"
+								Height="{DynamicResource md.comp.ibutton.default.container.size}"
+								HoverOpacity="{DynamicResource md.sys.state.hover.state-layer-opacity}"
+								StateBrush="{TemplateBinding Foreground}"
+								Width="{DynamicResource md.comp.ibutton.default.container.size}"
+								c:ShapeHelper.Shape="{TemplateBinding c:ShapeHelper.Shape}"/>
+						<c:MaterialIconEx 
+								x:Name="PART_Icon"
+								CheckedIcon="{TemplateBinding c:ToggleButtonHelper.CheckedIcon}"
+								Height="{DynamicResource md.comp.ibutton.default.icon.size}"
+								IndeterminateIcon="{TemplateBinding c:ToggleButtonHelper.IndeterminateIcon}"
+								IsChecked="{TemplateBinding ToggleButton.IsChecked}"
+								IsHitTestVisible="False"
+								UncheckedIcon="{TemplateBinding c:ButtonHelper.Icon}"
+								Width="{DynamicResource md.comp.ibutton.default.icon.size}" />
+					</Panel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface}" />
+			
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.button.disabled.container.opacity}" />
+			</Style>
+			
+			<Style Selector="^ /template/ i|MaterialIcon#PART_Icon">
+				<Setter Property="Opacity" Value="{DynamicResource md.comp.button.disabled.label.opacity}" />
+			</Style>
+		</Style>
+		
+		<!-- States / Hovered -->
+		<Style Selector="^:pointerover, ^.debug-hover">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsHoveredState" Value="True" />
+			</Style>
+		</Style>
+		
+		<!-- States / Focused -->
+		<Style Selector="^:focus, ^.debug-focus">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsFocusedState" Value="True" />
+			</Style>
+		</Style>
+		
+		<!-- States / Pressed -->
+		<Style Selector="^:pressed, ^.debug-pressed">
+			<Style Selector="^ /template/ c|StateLayer#PART_StateLayer">
+				<Setter Property="IsPressedState" Value="True" />
+			</Style>
+		</Style>
+		
+		<Style Selector="^.debug-pressed /template/ c|StateLayer#PART_StateLayer">
+			<Setter Property="IsFeedbackEnabled" Value="False" />
+		</Style>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+	
+	<ControlTheme x:Key="MaterialIconButton" TargetType="Button"
+								BasedOn="{StaticResource MaterialIconButtonBase}">
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-surface-variant}" />
+
+		<!-- Variants | Colors -->
+		<Style Selector="^:checked">
+			<Style Selector="^:not(:disabled)">
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.primary}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+	
+	<ControlTheme x:Key="MaterialFilledIconButton" TargetType="Button"
+								BasedOn="{StaticResource MaterialIconButtonBase}">
+		<Setter Property="Background" Value="{DynamicResource md.sys.color.primary}" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-primary}" />
+
+		<!-- Variants | Colors -->
+		<Style Selector="^:unchecked">
+			<Style Selector="^:not(:disabled)">
+				<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-variant}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.primary}" />
+			</Style>
+		</Style>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource md.sys.brush.on-surface}" />
+		</Style>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+	
+	<ControlTheme x:Key="MaterialFilledTonalIconButton" TargetType="Button"
+								BasedOn="{StaticResource MaterialIconButtonBase}">
+		<Setter Property="Background" Value="{DynamicResource md.sys.color.secondary-container}" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-secondary-container}" />
+
+		<!-- Variants | Colors -->
+		<Style Selector="^:unchecked">
+			<Style Selector="^:not(:disabled)">
+				<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-variant}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-surface-variant}" />
+			</Style>
+		</Style>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource md.sys.brush.on-surface}" />
+		</Style>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+	
+	<ControlTheme x:Key="MaterialOutlinedIconButton" TargetType="Button"
+								BasedOn="{StaticResource MaterialIconButtonBase}">
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-surface-variant}" />
+
+		<!-- Components -->
+		<Style Selector="^ /template/ Border#PART_Container">
+			<Setter Property="BorderBrush" Value="{DynamicResource md.sys.color.outline}" />
+			<Setter Property="BorderThickness" Value="1" />
+		</Style>
+		
+		<!-- Variants -->
+		<Style Selector="^:checked">
+			<Style Selector="^:not(:disabled)">
+				<Setter Property="Background" Value="{DynamicResource md.sys.color.inverse-surface}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.inverse-on-surface}" />
+			</Style>
+
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="BorderThickness" Value="0" />
+			</Style>
+		</Style>
+
+		<!-- States / Disabled -->
+		<Style Selector="^:disabled">
+			<Style Selector="^:checked">
+				<Setter Property="Background" Value="{DynamicResource md.sys.brush.on-surface}" />
+			</Style>
+			
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="BorderBrush" Value="{DynamicResource md.sys.brush.on-surface}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+	
+	<!-- ######################################################################################## -->
+	
+	<!-- Default Style -->
+	<ControlTheme 
+			x:Key="{x:Type ToggleButton}"
+			TargetType="Button"
+			BasedOn="{StaticResource MaterialIconButton}" />
+</ResourceDictionary>

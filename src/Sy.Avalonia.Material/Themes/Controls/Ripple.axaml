@@ -1,0 +1,62 @@
+﻿<ResourceDictionary 
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="using:Sy.Avalonia.Material.Controls">
+	
+	<Design.PreviewWith>
+		<Border
+				Background="White"
+				Padding="64"
+				TextBlock.LetterSpacing="0.1"
+				TextElement.FontFamily="Roboto"
+				TextElement.FontSize="16"
+				TextElement.FontWeight="Medium">
+			<Border 
+					Background="{DynamicResource md.sys.brush.surface}"
+					BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+					BorderThickness="1"
+					CornerRadius="16"
+					Padding="40">
+				<Border
+						Background="{DynamicResource md.sys.brush.primary}"
+						CornerRadius="16"
+						Height="64"
+						Width="128">
+					<Panel>
+						<c:Ripple 
+								CornerRadius="16"
+								FeedbackBrush="{DynamicResource md.sys.brush.on-primary}"
+								FeedbackOpacity="0.1" />
+						<Label 
+								Content="Click me!"
+								Foreground="{DynamicResource md.sys.brush.on-primary}"
+								HorizontalContentAlignment="Center"
+								IsHitTestVisible="False"
+								VerticalContentAlignment="Center" />
+					</Panel>
+				</Border>
+			</Border>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type c:Ripple}" TargetType="c:Ripple">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel x:Name="PART_Root">
+					<Border
+							x:Name="PART_Background"
+							Background="{TemplateBinding Background}"
+							CornerRadius="{TemplateBinding CornerRadius}"/>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^[IsCapturingOutsideCornerRadius=true] /template/ Panel#PART_Root">
+			<Setter Property="Background" Value="Transparent" />
+		</Style>
+
+		<Style Selector="^[(c|ControlHelper.IsMaterialAnimationsEnabled)=False]">
+			<Setter Property="IsFeedbackEnabled" Value="False"/>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>
