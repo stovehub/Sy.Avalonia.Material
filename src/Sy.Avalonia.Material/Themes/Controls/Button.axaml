@@ -211,7 +211,7 @@
 	<ControlTheme x:Key="MaterialButtonBase" TargetType="Button">
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="Height" Value="{DynamicResource md.comp.button.default.container.height}" />
+		<Setter Property="Height" Value="40" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="MinWidth" Value="64" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
@@ -265,10 +265,10 @@
 								Spacing="{DynamicResource md.comp.button.default.container.spacing}">
 							<i:MaterialIcon 
 									x:Name="PART_Icon"
-									Height="{DynamicResource md.comp.button.default.icon.size}"
+									Height="18"
 									IsVisible="{TemplateBinding c:ButtonHelper.IsIconVisible}"
 									Kind="{TemplateBinding c:ButtonHelper.Icon}"
-									Width="{DynamicResource md.comp.button.default.icon.size}" />
+									Width="18" />
 							<c:ContentPresenterEx
 									x:Name="PART_ContentPresenter"
 									Content="{TemplateBinding Content}"

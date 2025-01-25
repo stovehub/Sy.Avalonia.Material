@@ -32,12 +32,10 @@
 	<system:Double		x:Key="md.comp.tappbar.small.container.height">64</system:Double>
 	
 	<!-- Component / Button / Common -->
-	<system:Double		x:Key="md.comp.button.default.container.height">40</system:Double>
 	<Thickness				x:Key="md.comp.button.default.container.padding">24 0</Thickness>
 	<Thickness				x:Key="md.comp.button.default.container.padding-with-icon">16 0 24 0</Thickness>
 	<mux:Alias				x:Key="md.comp.button.default.container.shape" ResourceKey="md.sys.shape.corner.full" />
 	<system:Double		x:Key="md.comp.button.default.container.spacing">8</system:Double>
-	<system:Double		x:Key="md.comp.button.default.icon.size">18</system:Double>
 	<media:Casing			x:Key="md.comp.button.default.label.casing">Normal</media:Casing>
 	<system:Double		x:Key="md.comp.button.disabled.container.opacity">0.12</system:Double>
 	<system:Double		x:Key="md.comp.button.disabled.icon.opacity">0.38</system:Double>
@@ -77,7 +75,6 @@
 	
 	<!-- Component / Button / Segmented Button  -->
 	<Thickness				x:Key="md.comp.sbutton.default.container.padding">12 0</Thickness>
-			<!-- Inherits md.comp.button.default.container.height -->
 			<!-- Inherits md.comp.button.default.container.spacing -->
 			<!-- Inherits md.comp.button.default.container.shape -->
 			<!-- Inherits md.comp.button.default.icon.size -->
@@ -111,9 +108,13 @@
 	<system:Double		x:Key="md.comp.scrollbar.pressed.thumb.opacity">0.85</system:Double>
 
 	<!-- Component / Slider -->
-	<system:Double		x:Key="md.comp.slider.default.handle.height">44</system:Double>
-	<system:Double		x:Key="md.comp.slider.default.handle.width">4</system:Double>
-	<system:Double		x:Key="md.comp.slider.default.track.spacing">6</system:Double>
+	<system:Double		x:Key="md.comp.slider.horizontal.handle.height">44</system:Double>
+	<system:Double		x:Key="md.comp.slider.horizontal.handle.width">4</system:Double>
+	<Thickness				x:Key="md.comp.slider.horizontal.track.spacing">6 0</Thickness>
+	<system:Double		x:Key="md.comp.slider.vertical.handle.height">4</system:Double>
+	<system:Double		x:Key="md.comp.slider.vertical.handle.width">44</system:Double>
+	<Thickness				x:Key="md.comp.slider.vertical.track.spacing">0 6</Thickness>
+	<system:Double		x:Key="md.comp.slider.vertical-pressed.handle.height">4</system:Double>
 			<!-- ^ Not actually present in the template -->
 	
 	<!-- Component / ToolTip -->

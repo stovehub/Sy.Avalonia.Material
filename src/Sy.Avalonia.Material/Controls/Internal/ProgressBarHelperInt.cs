@@ -36,6 +36,10 @@ internal class ProgressBarHelperInt : AvaloniaObject {
 		AvaloniaProperty.RegisterAttached<ProgressBarHelperInt, ProgressBar, Thickness>(
 			"DeterminateIndicatorMargin");
 
+	public static readonly AttachedProperty<Thickness> DeterminateTrackMarginProperty =
+		AvaloniaProperty.RegisterAttached<ProgressBarHelperInt, ProgressBar, Thickness>(
+			"DeterminateTrackMargin");
+
 	public static readonly AttachedProperty<Thickness> IndeterminateContainerPaddingProperty =
 		AvaloniaProperty.RegisterAttached<ProgressBarHelperInt, ProgressBar, Thickness>(
 			"IndeterminateContainerPadding");
@@ -89,6 +93,10 @@ internal class ProgressBarHelperInt : AvaloniaObject {
 
 	public static Thickness GetDeterminateIndicatorMargin(AvaloniaObject element) {
 		return element.GetValue(DeterminateIndicatorMarginProperty);
+	}
+
+	public static Thickness GetDeterminateTrackMargin(AvaloniaObject element) {
+		return element.GetValue(DeterminateTrackMarginProperty);
 	}
 
 	public static Thickness GetIndeterminateContainerPadding(AvaloniaObject element) {
@@ -181,7 +189,10 @@ internal class ProgressBarHelperInt : AvaloniaObject {
 		var dPadding = isHorizontal ? new Thickness(-spacing, 0) : new(0, -spacing);
 
 		// Determinate Indicator
-		var dMargin = isHorizontal ? new Thickness(0, 0, spacing, 0) : new(0, spacing, 0, 0);
+		var diMargin = isHorizontal ? new Thickness(0, 0, spacing, 0) : new(0, spacing, 0, 0);
+
+		// Determinate Track
+		var dtMargin = isHorizontal ? new Thickness(spacing, 0, 0, 0) : new(0, 0, 0, spacing);
 
 		// Indeterminate Container
 		var iPaddingPart = spacing * -0.5;
@@ -193,7 +204,8 @@ internal class ProgressBarHelperInt : AvaloniaObject {
 
 		// Set values
 		control.SetValue(DeterminateContainerPaddingProperty, dPadding);
-		control.SetValue(DeterminateIndicatorMarginProperty, dMargin);
+		control.SetValue(DeterminateIndicatorMarginProperty, diMargin);
+		control.SetValue(DeterminateTrackMarginProperty, dtMargin);
 		control.SetValue(IndeterminateContainerPaddingProperty, iPadding);
 		control.SetValue(IndeterminateTrackMarginProperty, iMargin);
 	}

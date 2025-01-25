@@ -112,11 +112,12 @@
 										x:Name="PART_Indicator"
 										Background="{TemplateBinding Foreground}"
 										CornerRadius="{TemplateBinding CornerRadius}"
-										Margin="{TemplateBinding c:ProgressBarHelperInt.DeterminateIndicatorMargin}" />
+										Margin="0" />
 								<Border 
 										x:Name="PART_Track"
 										Background="{TemplateBinding Background}"
-										CornerRadius="{TemplateBinding CornerRadius}" />
+										CornerRadius="{TemplateBinding CornerRadius}"
+										Margin="{TemplateBinding c:ProgressBarHelperInt.DeterminateTrackMargin}" />
 							</Grid>
 							<Border 
 									x:Name="PART_StopIndicator"

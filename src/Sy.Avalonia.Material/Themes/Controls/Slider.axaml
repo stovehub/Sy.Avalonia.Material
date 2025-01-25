@@ -31,7 +31,6 @@
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 
-		<Setter Property="c:ShadowHelper.Elevation" Value="1" />
 		<Setter Property="c:ShapeHelper.Shape" Value="C" />
 		
 		<Setter Property="Template">
@@ -40,7 +39,7 @@
 							ColumnDefinitions="6, Auto, 6"
 							RowDefinitions="6, Auto, 6">
 					<Border
-						x:Name="PART_Handle" Width="4" Height="44"
+						x:Name="PART_Handle"
 						Grid.Column="1"
 						Grid.Row="1"
 						Background="{TemplateBinding Background}"
