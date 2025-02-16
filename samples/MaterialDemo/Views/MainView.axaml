@@ -3,14 +3,328 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:MaterialDemo.ViewModels"
+             xmlns:c="using:Sy.Avalonia.Material.Controls"
+             xmlns:i="using:Material.Icons.Avalonia"
+             xmlns:controls="using:Sy.Avalonia.Material.Controls"
+             xmlns:materialDemo="clr-namespace:MaterialDemo"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MaterialDemo.Views.MainView"
              x:DataType="vm:MainViewModel">
-  <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <vm:MainViewModel />
-  </Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+    <Grid RowDefinitions="Auto, *" Background="{DynamicResource md.sys.brush.surface}">
+        <Border
+            Grid.Row="0"
+            Background="{DynamicResource md.sys.brush.surface}"
+            BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+            BorderThickness="1"
+            CornerRadius="16"
+            HorizontalAlignment="Center"
+            Padding="32"
+            Margin="1, 1, 0, 12">
+            <StackPanel Spacing="12" Orientation="Horizontal">
+                <Button
+                    Command="{Binding ChangeThemeCommand}"
+                    CommandParameter="{x:Static materialDemo:Theme.Red}"
+                    Background="#b33b15"
+                    Foreground="White"
+                    Width="40"
+                    Height="40" />
+
+                <Button
+                    Command="{Binding ChangeThemeCommand}"
+                    CommandParameter="{x:Static materialDemo:Theme.Green}"
+                    Background="#63a002"
+                    Foreground="White"
+                    Width="40"
+                    Height="40" />
+
+                <Button
+                    Command="{Binding ChangeThemeCommand}"
+                    CommandParameter="{x:Static materialDemo:Theme.Blue}"
+                    Background="#769cdf"
+                    Foreground="White"
+                    Width="40"
+                    Height="40" />
+                
+                <Button
+                    Command="{Binding ChangeThemeCommand}"
+                    CommandParameter="{x:Static materialDemo:Theme.Yellow}"
+                    Background="#ffde3f"
+                    Foreground="White"
+                    Width="40"
+                    Height="40" />
+
+                <Button Command="{Binding SwitchBaseThemeCommand}" Content="Toggle base theme"
+                        Theme="{StaticResource MaterialFilledButton}" />
+                
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <ColorPicker  Color="{Binding Color}" />
+
+                    <Button
+                        Padding="6"
+                        Content="Apply"
+                        Command="{Binding ApplyCustomColorCommand}"
+                        Background="DarkSlateGray"
+                        Foreground="White"
+                        Width="40"
+                        Height="40" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <ScrollViewer Grid.Row="1">
+            <WrapPanel Background="{DynamicResource md.sys.brush.surface}" Orientation="Horizontal"
+                       Margin="15, 15, 0,0">
+                <!-- Filled -->
+                <Border
+                    Background="{DynamicResource md.sys.brush.surface}"
+                    BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+                    BorderThickness="1"
+                    CornerRadius="16"
+                    Padding="24"
+                    Margin="15, 15,15, 15">
+                    <StackPanel Spacing="32">
+                        <TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Filled Buttons" />
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button Content="Label"
+                                    Theme="{StaticResource MaterialFilledButton}" />
+                            <Button Content="Label" Classes="debug-hover"
+                                    Theme="{StaticResource MaterialFilledButton}" />
+                            <Button Content="Label" Classes="debug-focus"
+                                    Theme="{StaticResource MaterialFilledButton}" />
+                            <Button Content="Label" Classes="debug-pressed"
+                                    Theme="{StaticResource MaterialFilledButton}" />
+                            <Button Content="Label" IsEnabled="False"
+                                    Theme="{StaticResource MaterialFilledButton}" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button
+                                Content="Label" Theme="{StaticResource MaterialFilledButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-hover"
+                                Theme="{StaticResource MaterialFilledButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-focus"
+                                Theme="{StaticResource MaterialFilledButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-pressed"
+                                Theme="{StaticResource MaterialFilledButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" IsEnabled="False"
+                                Theme="{StaticResource MaterialFilledButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Outlined -->
+                <Border
+                    Background="{DynamicResource md.sys.brush.surface}"
+                    BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+                    BorderThickness="1"
+                    CornerRadius="16"
+                    HorizontalAlignment="Center"
+                    Padding="24"
+                    Margin="15, 15,15, 15">
+                    <StackPanel Spacing="32">
+                        <TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Outlined Buttons" />
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button Content="Label" Theme="{StaticResource MaterialOutlinedButton}" />
+                            <Button Content="Label" Classes="debug-hover"
+                                    Theme="{StaticResource MaterialOutlinedButton}" />
+                            <Button Content="Label" Classes="debug-focus"
+                                    Theme="{StaticResource MaterialOutlinedButton}" />
+                            <Button Content="Label" Classes="debug-pressed"
+                                    Theme="{StaticResource MaterialOutlinedButton}" />
+                            <Button Content="Label" IsEnabled="False"
+                                    Theme="{StaticResource MaterialOutlinedButton}" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button
+                                Content="Label" Theme="{StaticResource MaterialOutlinedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-hover"
+                                Theme="{StaticResource MaterialOutlinedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-focus"
+                                Theme="{StaticResource MaterialOutlinedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-pressed"
+                                Theme="{StaticResource MaterialOutlinedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" IsEnabled="False"
+                                Theme="{StaticResource MaterialOutlinedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Text -->
+                <Border
+                    Background="{DynamicResource md.sys.brush.surface}"
+                    BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+                    BorderThickness="1"
+                    CornerRadius="16"
+                    HorizontalAlignment="Center"
+                    Padding="24"
+                    Margin="15, 15,15, 15">
+                    <StackPanel Spacing="32">
+                        <TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Text Buttons" />
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button Content="Label" Theme="{StaticResource MaterialTextButton}" />
+                            <Button Content="Label" Classes="debug-hover"
+                                    Theme="{StaticResource MaterialTextButton}" />
+                            <Button Content="Label" Classes="debug-focus"
+                                    Theme="{StaticResource MaterialTextButton}" />
+                            <Button Content="Label" Classes="debug-pressed"
+                                    Theme="{StaticResource MaterialTextButton}" />
+                            <Button Content="Label" IsEnabled="False"
+                                    Theme="{StaticResource MaterialTextButton}" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button
+                                Content="Label" Theme="{StaticResource MaterialTextButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-hover"
+                                Theme="{StaticResource MaterialTextButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-focus"
+                                Theme="{StaticResource MaterialTextButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-pressed"
+                                Theme="{StaticResource MaterialTextButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" IsEnabled="False"
+                                Theme="{StaticResource MaterialTextButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Elevated -->
+                <Border
+                    Background="{DynamicResource md.sys.brush.surface}"
+                    BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+                    BorderThickness="1"
+                    CornerRadius="16"
+                    HorizontalAlignment="Center"
+                    Padding="24"
+                    Margin="15, 15,15, 15">
+                    <StackPanel Spacing="32">
+                        <TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Elevated Buttons" />
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button Content="Label" Theme="{StaticResource MaterialElevatedButton}" />
+                            <Button Content="Label" Classes="debug-hover"
+                                    Theme="{StaticResource MaterialElevatedButton}" />
+                            <Button Content="Label" Classes="debug-focus"
+                                    Theme="{StaticResource MaterialElevatedButton}" />
+                            <Button Content="Label" Classes="debug-pressed"
+                                    Theme="{StaticResource MaterialElevatedButton}" />
+                            <Button Content="Label" IsEnabled="False"
+                                    Theme="{StaticResource MaterialElevatedButton}" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button
+                                Content="Label" Theme="{StaticResource MaterialElevatedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-hover"
+                                Theme="{StaticResource MaterialElevatedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-focus"
+                                Theme="{StaticResource MaterialElevatedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-pressed"
+                                Theme="{StaticResource MaterialElevatedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" IsEnabled="False"
+                                Theme="{StaticResource MaterialElevatedButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+
+                <!-- Tonal -->
+                <Border
+                    Background="{DynamicResource md.sys.brush.surface}"
+                    BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+                    BorderThickness="1"
+                    CornerRadius="16"
+                    HorizontalAlignment="Center"
+                    Padding="24"
+                    Margin="15, 15,15, 15">
+                    <StackPanel Spacing="32">
+                        <TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Tonal Buttons" />
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button Content="Label" Theme="{StaticResource MaterialFilledTonalButton}" />
+                            <Button Content="Label" Classes="debug-hover"
+                                    Theme="{StaticResource MaterialFilledTonalButton}" />
+                            <Button Content="Label" Classes="debug-focus"
+                                    Theme="{StaticResource MaterialFilledTonalButton}" />
+                            <Button Content="Label" Classes="debug-pressed"
+                                    Theme="{StaticResource MaterialFilledTonalButton}" />
+                            <Button Content="Label" IsEnabled="False"
+                                    Theme="{StaticResource MaterialFilledTonalButton}" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <Button
+                                Content="Label" Theme="{StaticResource MaterialFilledTonalButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-hover"
+                                Theme="{StaticResource MaterialFilledTonalButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-focus"
+                                Theme="{StaticResource MaterialFilledTonalButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" Classes="debug-pressed"
+                                Theme="{StaticResource MaterialFilledTonalButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                            <Button
+                                Content="Label" IsEnabled="False"
+                                Theme="{StaticResource MaterialFilledTonalButton}"
+                                c:ButtonHelper.Icon="Add" c:ButtonHelper.IsIconVisible="True" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+            </WrapPanel>
+        </ScrollViewer>
+
+
+    </Grid>
 </UserControl>

@@ -3,59 +3,117 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 using System.Diagnostics;
+using Avalonia.Media;
+using MaterialColorUtilities.Palettes;
+using MaterialColorUtilities.Schemes;
+using MaterialColorUtilities.Utils;
+using Sy.Avalonia.Material.Utils;
 
 namespace Sy.Avalonia.Material.Themes;
 
-public sealed class MaterialTheme : Styles, IResourceNode {
-	private const string DefaultVariantKey = "Light";
+public partial class MaterialTheme : Styles, IResourceNode
+{
+    private readonly Application _app;
 
-	private readonly ResourceDictionary _defaultSchemeDark;
-	private readonly ResourceDictionary _defaultSchemeLight;
+    private const string DefaultVariantKey = "Light";
 
-	public MaterialTheme() : this(null) {
-		//
-	}
+    private readonly ResourceDictionary _defaultSchemeDark;
+    private readonly ResourceDictionary _defaultSchemeLight;
 
-	public MaterialTheme(IServiceProvider? serviceProvider) {
-		AvaloniaXamlLoader.Load(serviceProvider, this);
+    public Action<Scheme<uint>>? OnColorThemeChanged { get; set; }
+    public Action<ThemeVariant>? OnBaseThemeChanged { get; set; }
 
-		_defaultSchemeDark = GetAndRemove<ResourceDictionary>("DefaultSchemeTokensDark");
-		_defaultSchemeLight = GetAndRemove<ResourceDictionary>("DefaultSchemeTokensLight");
-	}
+    
+    public MaterialTheme()
+    {
+        AvaloniaXamlLoader.Load(this);
+        _app = Application.Current!;
+        _app.ActualThemeVariantChanged += (_, e) => OnBaseThemeChanged?.Invoke(_app.ActualThemeVariant);
+        _defaultSchemeDark = GetAndRemove<ResourceDictionary>("DefaultSchemeTokensDark");
+        _defaultSchemeLight = GetAndRemove<ResourceDictionary>("DefaultSchemeTokensLight");
+    }
 
-	bool IResourceNode.TryGetResource(object key, ThemeVariant? theme, out object? value) {
-		var baseSuccess = TryGetResource(key, theme, out value);
-		if (baseSuccess) return true;
+    public static MaterialTheme GetInstance() => GetInstance(Application.Current!);
 
-		var variantKey = GetCurrentVariantKey();
-		if (!IsSupportedVariantKey(variantKey)) return false;
+    public static MaterialTheme GetInstance(Application app)
+    {
+        var theme = app.Styles.FirstOrDefault(style => style is MaterialTheme);
+        if (theme is not MaterialTheme mTheme)
+            throw new InvalidOperationException("aa");
 
-		var resources = variantKey switch {
-			"Dark" => _defaultSchemeDark,
-			_ => _defaultSchemeLight,
-		};
-		return resources.TryGetValue(key, out value);
-	}
+        return mTheme;
+    }
+    /*
+    bool IResourceNode.TryGetResource(object key, ThemeVariant? theme, out object? value)
+    {
+        var baseSuccess = TryGetResource(key, theme, out value);
+        if (baseSuccess) return true;
 
-	private T GetAndRemove<T>(string key) {
-		var val = Resources[key] ?? throw new UnreachableException(key);
-		if (val is not T t) throw new UnreachableException(key);
-		Resources.Remove(key);
-		return t;
-	}
+        var variantKey = GetCurrentVariantKey();
+        if (!IsSupportedVariantKey(variantKey)) return false;
 
-	private string GetCurrentVariantKey() {
-		var actualVariantObj = Application.Current?.ActualThemeVariant.Key;
-		if (actualVariantObj is string actualVariant) {
-			return actualVariant;
-		}
-		return DefaultVariantKey;
-	}
+        var resources = variantKey switch
+        {
+            "Dark" => _defaultSchemeDark,
+            _ => _defaultSchemeLight,
+        };
+        return resources.TryGetValue(key, out value);
+    }
+    */
+    public void ChangeTheme(Color seed)
+    {
+        var hey = ColorUtils.ArgbFromRgb(seed.R, seed.G, seed.B);
+        ApplySchemes(hey);
+    }
 
-	private bool IsSupportedVariantKey(string variantKey) {
-		if (variantKey == "Light") return true;
-		if (variantKey == "Dark") return true;
-		return false;
-	}
+    public void SwitchBaseTheme()
+    {
+        if (Application.Current is null) return;
+        var newBase = Application.Current.ActualThemeVariant == ThemeVariant.Dark
+            ? ThemeVariant.Light
+            : ThemeVariant.Dark;
+        Application.Current.RequestedThemeVariant = newBase;
+    }
 
+    private void ApplySchemes(uint seed)
+    {
+        CorePalette corePalette = CorePalette.Of(seed);
+        Scheme<uint> lightScheme = new LightSchemeMapper().Map(corePalette);
+        Scheme<uint> darkScheme = new DarkSchemeMapper().Map(corePalette);
+
+        var newLightRd = ResourceDictionaryExt.CreateResourceDictionary(_defaultSchemeLight, lightScheme);
+        var newDarkRd = ResourceDictionaryExt.CreateResourceDictionary(_defaultSchemeDark, darkScheme);
+
+        _app.Resources.ThemeDictionaries[ThemeVariant.Light] = newLightRd;
+        _app.Resources.ThemeDictionaries[ThemeVariant.Dark] = newDarkRd;
+    }
+
+
+    private T GetAndRemove<T>(string key)
+    {
+        var val = Resources[key] ?? throw new UnreachableException(key);
+        if (val is not T t) throw new UnreachableException(key);
+        Resources.Remove(key);
+        return t;
+    }
+
+    private string GetCurrentVariantKey()
+    {
+        var actualVariantObj = Application.Current?.ActualThemeVariant.Key;
+        if (actualVariantObj is string actualVariant)
+        {
+            return actualVariant;
+        }
+
+        return DefaultVariantKey;
+    }
+
+    private bool IsSupportedVariantKey(string variantKey)
+    {
+        return variantKey switch
+        {
+            "Light" or "Dark" => true,
+            _ => false
+        };
+    }
 }

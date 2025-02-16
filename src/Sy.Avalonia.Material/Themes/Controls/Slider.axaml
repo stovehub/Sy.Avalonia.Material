@@ -1,15 +1,58 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-										xmlns:c="using:Sy.Avalonia.Material.Controls"
-										xmlns:i="using:Material.Icons.Avalonia">
+<ResourceDictionary
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:c="using:Sy.Avalonia.Material.Controls"
+		xmlns:i="using:Material.Icons.Avalonia">
+	
 	<Design.PreviewWith>
-		<Border Background="White" Padding="70">
-			<StackPanel Orientation="Vertical" Width="350">
-				<Slider Value="69" Width="200" />
+		<Border Background="White" Padding="32">
+			<StackPanel Spacing="32">
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left" IsVisible="False"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Horizontal Sliders" />
+						<Slider Value="69" Width="256" />
+					</StackPanel>
+				</Border>
+
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left" IsVisible="False"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Vertical Sliders" />
+
+					</StackPanel>
+				</Border>
+
+				<Border
+					  Background="{DynamicResource md.sys.brush.surface}"
+						BorderBrush="{DynamicResource md.sys.brush.outline-variant}"
+						BorderThickness="1"
+						CornerRadius="16"
+						HorizontalAlignment="Left"
+						Padding="32">
+					<StackPanel Spacing="32">
+						<TextBlock Classes="title-medium" Margin="0 0 0 -16" Text="Components" />
+
+						<Thumb Classes="horizontal" Theme="{DynamicResource MaterialSliderHandle}" />
+
+					</StackPanel>
+				</Border>
+				
+				
+				
 
 				<TickBar Ticks="10, 20, 30, 50, 100" Width="100" Height="25" />
 				
-				<Thumb Classes="horizontal" Theme="{DynamicResource MaterialSliderHandle}" />
 
 			</StackPanel>
 
@@ -31,7 +74,6 @@
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 
-		<Setter Property="c:ShadowHelper.Elevation" Value="1" />
 		<Setter Property="c:ShapeHelper.Shape" Value="C" />
 		
 		<Setter Property="Template">
@@ -40,7 +82,7 @@
 							ColumnDefinitions="6, Auto, 6"
 							RowDefinitions="6, Auto, 6">
 					<Border
-						x:Name="PART_Handle" Width="4" Height="44"
+						x:Name="PART_Handle"
 						Grid.Column="1"
 						Grid.Row="1"
 						Background="{TemplateBinding Background}"

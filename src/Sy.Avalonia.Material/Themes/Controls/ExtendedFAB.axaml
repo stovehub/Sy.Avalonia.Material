@@ -58,10 +58,10 @@
 	<!-- ######################################################################################## -->
 
 	<ControlTheme x:Key="MaterialExtendedFAB" TargetType="Button">
-		<Setter Property="Background" Value="{DynamicResource md.sys.color.primary-container}" />
+		<Setter Property="Background" Value="{DynamicResource md.sys.brush.primary-container}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-primary-container}" />
+		<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-primary-container}" />
 		<Setter Property="Height" Value="{DynamicResource md.comp.xfab.default.container.height}" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="MinWidth" Value="{DynamicResource md.comp.xfab.default.container.min-width}" />
@@ -76,7 +76,7 @@
 		
 		<Setter Property="c:ControlHelper.ContentCharacterCasing" Value="{DynamicResource md.comp.button.default.label.casing}" />
 		<Setter Property="c:ButtonHelper.IsIconVisible" Value="True" />
-		<Setter Property="c:ShadowHelper.Color" Value="{DynamicResource md.sys.brush.shadow}" />
+		<Setter Property="c:ShadowHelper.Color" Value="{DynamicResource md.sys.color.shadow}" />
 		<Setter Property="c:ShadowHelper.Elevation" Value="{DynamicResource md.sys.elevation.level3}" />
 		<Setter Property="c:ShapeHelper.Shape" Value="{DynamicResource md.comp.xfab.default.container.shape}" />
 
@@ -139,18 +139,18 @@
 		<!-- Color -->
 		<Style Selector="^:not(:disabled)">
 			<Style Selector="^.secondary">
-				<Setter Property="Background" Value="{DynamicResource md.sys.color.secondary-container}" />
-				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-secondary-container}" />
+				<Setter Property="Background" Value="{DynamicResource md.sys.brush.secondary-container}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-secondary-container}" />
 			</Style>
 
 			<Style Selector="^.tertiary">
-				<Setter Property="Background" Value="{DynamicResource md.sys.color.tertiary-container}" />
-				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.on-tertiary-container}" />
+				<Setter Property="Background" Value="{DynamicResource md.sys.brush.tertiary-container}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.on-tertiary-container}" />
 			</Style>
 
 			<Style Selector="^.surface">
-				<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-container-high}" />
-				<Setter Property="Foreground" Value="{DynamicResource md.sys.color.primary}" />
+				<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface-container-high}" />
+				<Setter Property="Foreground" Value="{DynamicResource md.sys.brush.primary}" />
 			</Style>
 		</Style>
 

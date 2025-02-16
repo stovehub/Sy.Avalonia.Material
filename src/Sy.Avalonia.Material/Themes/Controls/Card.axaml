@@ -228,8 +228,8 @@
 
 	<ControlTheme x:Key="MaterialElevatedCard" TargetType="c:Card"
 								BasedOn="{StaticResource MaterialCardBase}">
-		<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-container-low}" />
-		<Setter Property="c:ShadowHelper.Color" Value="{DynamicResource md.sys.brush.shadow}" />
+		<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface-container-low}" />
+		<Setter Property="c:ShadowHelper.Color" Value="{DynamicResource md.sys.color.shadow}" />
 		<Setter Property="c:ShadowHelper.Elevation" Value="1" />
 		
 		<Setter Property="c:StateLayer.RconSource" Value="{Binding $self}" />
@@ -269,7 +269,7 @@
 
 	<ControlTheme x:Key="MaterialFilledCard" TargetType="c:Card"
 								BasedOn="{StaticResource MaterialCardBase}">
-		<Setter Property="Background" Value="{DynamicResource md.sys.color.surface-container-highest}" />
+		<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface-container-highest}" />
 
 		<!-- States / Disabled -->
 		<Style Selector="^:disabled">
@@ -305,7 +305,7 @@
 
 	<ControlTheme x:Key="MaterialOutlinedCard" TargetType="c:Card"
 								BasedOn="{StaticResource MaterialCardBase}">
-		<Setter Property="Background" Value="{DynamicResource md.sys.color.surface}" />
+		<Setter Property="Background" Value="{DynamicResource md.sys.brush.surface}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource md.sys.brush.outline-variant}" />
 		<Setter Property="BorderThickness" Value="1" />
 		
