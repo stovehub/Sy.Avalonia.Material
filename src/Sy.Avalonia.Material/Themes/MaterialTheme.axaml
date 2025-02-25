@@ -1,23 +1,33 @@
 <Styles xmlns="https://github.com/avaloniaui"
-				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				xmlns:themes="using:Sy.Avalonia.Material.Themes"
-				x:Class="Sy.Avalonia.Material.Themes.MaterialTheme">
-	<Styles.Resources>
-		<ResourceDictionary>
-			<ResourceDictionary.MergedDictionaries>
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:themes="using:Sy.Avalonia.Material.Themes"
+        x:Class="Sy.Avalonia.Material.Themes.MaterialTheme">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceInclude x:Key="Dark"
+                                 Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-scheme-dark.axaml" />
+                <ResourceInclude x:Key="Light"
+                                 Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-scheme-light.axaml" />
+            </ResourceDictionary.ThemeDictionaries>
+
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <!--
 				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-palettes.axaml" />
-				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-style-m3.axaml" />
-				<ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-typography-m3.axaml" />
-			</ResourceDictionary.MergedDictionaries>
-			
-			<!-- These are removed and manually managed by the Theme -->
-			<ResourceInclude x:Key="DefaultSchemeTokensDark"
-											 Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-scheme-dark.axaml" />
-			<ResourceInclude x:Key="DefaultSchemeTokensLight"
-											 Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-scheme-light.axaml" />
-		</ResourceDictionary>
-	</Styles.Resources>
-	
-	<StyleInclude Source="avares://Sy.Avalonia.Material/Themes/Styles/MaterialControls.axaml" />
-	<StyleInclude Source="avares://Sy.Avalonia.Material/Themes/Styles/MaterialTypography.axaml" />
+				-->
+                <ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-style-m3.axaml" />
+                <ResourceInclude Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-typography-m3.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ResourceInclude x:Key="DefaultSchemeTokensDark"
+                             Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-scheme-dark.axaml" />
+            <ResourceInclude x:Key="DefaultSchemeTokensLight"
+                             Source="avares://Sy.Avalonia.Material/Themes/Tokens/default-scheme-light.axaml" />
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <StyleInclude Source="avares://Sy.Avalonia.Material/Themes/Styles/MaterialControls.axaml" />
+    <StyleInclude Source="avares://Sy.Avalonia.Material/Themes/Styles/MaterialTypography.axaml" />
 </Styles>

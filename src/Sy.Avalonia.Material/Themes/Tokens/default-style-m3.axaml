@@ -1,28 +1,28 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-										xmlns:media="using:Sy.Avalonia.Material.Media"
-										xmlns:mux="using:Sy.Avalonia.Material.Markup.Extensions"
-										xmlns:system="using:System">
-	<!-- System -->
-	<media:Elevation	x:Key="md.sys.elevation.level0">0</media:Elevation>
-	<media:Elevation	x:Key="md.sys.elevation.level1">1</media:Elevation>
-	<media:Elevation	x:Key="md.sys.elevation.level2">3</media:Elevation>
-	<media:Elevation	x:Key="md.sys.elevation.level3">6</media:Elevation>
-	<media:Elevation	x:Key="md.sys.elevation.level4">8</media:Elevation>
+                    xmlns:media="using:Sy.Avalonia.Material.Media"
+                    xmlns:mux="using:Sy.Avalonia.Material.Markup.Extensions"
+                    xmlns:system="using:System">
+  <!-- System -->
+  <media:Elevation x:Key="md.sys.elevation.level0">0</media:Elevation>
+  <media:Elevation x:Key="md.sys.elevation.level1">1</media:Elevation>
+  <media:Elevation x:Key="md.sys.elevation.level2">3</media:Elevation>
+  <media:Elevation x:Key="md.sys.elevation.level3">6</media:Elevation>
+  <media:Elevation x:Key="md.sys.elevation.level4">8</media:Elevation>
 
-	<media:Shape			x:Key="md.sys.shape.corner.extra-small">4</media:Shape>
-	<media:Shape			x:Key="md.sys.shape.corner.medium">12</media:Shape>
-	<media:Shape			x:Key="md.sys.shape.corner.large">16</media:Shape>
-	<media:Shape			x:Key="md.sys.shape.corner.extra-large">28</media:Shape>
-	<media:Shape			x:Key="md.sys.shape.corner.full">C</media:Shape>
+  <media:Shape x:Key="md.sys.shape.corner.extra-small">4</media:Shape>
+  <media:Shape x:Key="md.sys.shape.corner.medium">12</media:Shape>
+  <media:Shape x:Key="md.sys.shape.corner.large">16</media:Shape>
+  <media:Shape x:Key="md.sys.shape.corner.extra-large">28</media:Shape>
+  <media:Shape x:Key="md.sys.shape.corner.full">C</media:Shape>
 
-	<system:Double		x:Key="md.sys.state.dragged.state-layer-opacity">0.16</system:Double>
-	<Thickness				x:Key="md.sys.state.focus-indicator.outer-offset">0</Thickness>
-			<!-- ^ Deviation from spec, Avalonia does not support Adorners outside of the control's bounds -->
-	<Thickness				x:Key="md.sys.state.focus-indicator.thickness">3</Thickness>
-	<system:Double		x:Key="md.sys.state.focus.state-layer-opacity">0.1</system:Double>
-	<system:Double		x:Key="md.sys.state.hover.state-layer-opacity">0.08</system:Double>
-	<system:Double		x:Key="md.sys.state.pressed.state-layer-opacity">0.1</system:Double>
+  <system:Double x:Key="md.sys.state.dragged.state-layer-opacity">0.16</system:Double>
+  <Thickness x:Key="md.sys.state.focus-indicator.outer-offset">0</Thickness>
+  <!-- ^ Deviation from spec, Avalonia does not support Adorners outside of the control's bounds -->
+  <Thickness x:Key="md.sys.state.focus-indicator.thickness">3</Thickness>
+  <system:Double x:Key="md.sys.state.focus.state-layer-opacity">0.1</system:Double>
+  <system:Double x:Key="md.sys.state.hover.state-layer-opacity">0.08</system:Double>
+  <system:Double x:Key="md.sys.state.pressed.state-layer-opacity">0.1</system:Double>
 
 
 	<!-- Component / App Bar / Top -->
@@ -55,71 +55,71 @@
 			<!-- Inherits md.comp.button.disabled.container.opacity -->
 			<!-- Inherits md.comp.button.disabled.icon.opacity -->
 
-	<!-- Component / Button / Extended FAB  -->
-	<system:Double		x:Key="md.comp.xfab.default.container.height">56</system:Double>
-	<system:Double		x:Key="md.comp.xfab.default.container.min-width">80</system:Double>
-	<Thickness				x:Key="md.comp.xfab.default.container.padding">16 0</Thickness>
-	<mux:Alias				x:Key="md.comp.xfab.default.container.shape" ResourceKey="md.sys.shape.corner.large" />
-			<!-- Inherits md.comp.button.default.container.spacing -->
-			<!-- Inherits md.comp.button.default.label.casing -->
-			<!-- Inherits md.comp.button.disabled.container.opacity -->
-			<!-- Inherits md.comp.button.disabled.icon.opacity -->
-			<!-- Inherits md.comp.button.disabled.label.opacity -->
-			<!-- Inherits md.comp.fab.default.icon.size -->
+  <!-- Component / Button / Extended FAB  -->
+  <system:Double x:Key="md.comp.xfab.default.container.height">56</system:Double>
+  <system:Double x:Key="md.comp.xfab.default.container.min-width">80</system:Double>
+  <Thickness x:Key="md.comp.xfab.default.container.padding">16 0</Thickness>
+  <mux:Alias x:Key="md.comp.xfab.default.container.shape" ResourceKey="md.sys.shape.corner.large" />
+  <!-- Inherits md.comp.button.default.container.spacing -->
+  <!-- Inherits md.comp.button.default.label.casing -->
+  <!-- Inherits md.comp.button.disabled.container.opacity -->
+  <!-- Inherits md.comp.button.disabled.icon.opacity -->
+  <!-- Inherits md.comp.button.disabled.label.opacity -->
+  <!-- Inherits md.comp.fab.default.icon.size -->
 
-	<!-- Component / Button / Icon Button -->
-	<mux:Alias				x:Key="md.comp.ibutton.default.container.shape" ResourceKey="md.sys.shape.corner.full" />
-	<system:Double		x:Key="md.comp.ibutton.default.container.size">40</system:Double>
-	<system:Double		x:Key="md.comp.ibutton.default.icon.size">24</system:Double>
-	<system:Double		x:Key="md.comp.ibutton.default.target.size">48</system:Double>
-	
-	<!-- Component / Button / Segmented Button  -->
-	<Thickness				x:Key="md.comp.sbutton.default.container.padding">12 0</Thickness>
-			<!-- Inherits md.comp.button.default.container.spacing -->
-			<!-- Inherits md.comp.button.default.container.shape -->
-			<!-- Inherits md.comp.button.default.icon.size -->
-			<!-- Inherits md.comp.button.default.label.casing -->
-			<!-- Inherits md.comp.button.disabled.container.opacity -->
-			<!-- Inherits md.comp.button.disabled.icon.opacity -->
-			<!-- Inherits md.comp.button.disabled.label.opacity -->
+  <!-- Component / Button / Icon Button -->
+  <mux:Alias x:Key="md.comp.ibutton.default.container.shape" ResourceKey="md.sys.shape.corner.full" />
+  <system:Double x:Key="md.comp.ibutton.default.container.size">40</system:Double>
+  <system:Double x:Key="md.comp.ibutton.default.icon.size">24</system:Double>
+  <system:Double x:Key="md.comp.ibutton.default.target.size">48</system:Double>
 
-	<!-- Component / Card -->
-	<Thickness				x:Key="md.comp.card.default.container.padding">16</Thickness>
-	<mux:Alias				x:Key="md.comp.card.default.container.shape" ResourceKey="md.sys.shape.corner.medium" />
-	<system:Double		x:Key="md.comp.card.default.icon.size">24</system:Double>
-	<system:Double		x:Key="md.comp.card.disabled.container.opacity">0.38</system:Double>
-	<system:Double		x:Key="md.comp.card.outlined-disabled.outline.opacity">0.12</system:Double>
-			<!-- ^ Not actually present in the template -->
+  <!-- Component / Button / Segmented Button  -->
+  <Thickness x:Key="md.comp.sbutton.default.container.padding">12 0</Thickness>
+  <!-- Inherits md.comp.button.default.container.spacing -->
+  <!-- Inherits md.comp.button.default.container.shape -->
+  <!-- Inherits md.comp.button.default.icon.size -->
+  <!-- Inherits md.comp.button.default.label.casing -->
+  <!-- Inherits md.comp.button.disabled.container.opacity -->
+  <!-- Inherits md.comp.button.disabled.icon.opacity -->
+  <!-- Inherits md.comp.button.disabled.label.opacity -->
 
-	<!-- Component / Progress Indicator -->
-	<PenLineCap				x:Key="md.comp.progress.circular.track.cap">Round</PenLineCap>
-	<system:Double		x:Key="md.comp.progress.circular.track.thickness">4</system:Double>
-	<mux:Alias				x:Key="md.comp.progress.default.track.shape" ResourceKey="md.sys.shape.corner.full" />
-	<system:Double		x:Key="md.comp.progress.default.track.spacing">4</system:Double>
-	
-	<!-- Component / Scrollbar -->
-	<system:Double		x:Key="md.comp.scrollbar.default.container.min-height">4</system:Double>
-	<system:Double		x:Key="md.comp.scrollbar.default.container.min-width">4</system:Double>
-	<mux:Alias				x:Key="md.comp.scrollbar.default.container.shape" ResourceKey="md.sys.shape.corner.full" />
-	<system:Double		x:Key="md.comp.scrollbar.default.thumb.opacity">0.29</system:Double>
-	<system:Double		x:Key="md.comp.scrollbar.disabled.container.opacity">0.38</system:Double>
-	<system:Double		x:Key="md.comp.scrollbar.focus.thumb.opacity">0.75</system:Double>
-	<system:Double		x:Key="md.comp.scrollbar.hover.thumb.opacity">0.65</system:Double>
-	<system:Double		x:Key="md.comp.scrollbar.pressed.thumb.opacity">0.85</system:Double>
+  <!-- Component / Card -->
+  <Thickness x:Key="md.comp.card.default.container.padding">16</Thickness>
+  <mux:Alias x:Key="md.comp.card.default.container.shape" ResourceKey="md.sys.shape.corner.medium" />
+  <system:Double x:Key="md.comp.card.default.icon.size">24</system:Double>
+  <system:Double x:Key="md.comp.card.disabled.container.opacity">0.38</system:Double>
+  <system:Double x:Key="md.comp.card.outlined-disabled.outline.opacity">0.12</system:Double>
+  <!-- ^ Not actually present in the template -->
 
-	<!-- Component / Slider -->
-	<system:Double		x:Key="md.comp.slider.horizontal.handle.height">44</system:Double>
-	<system:Double		x:Key="md.comp.slider.horizontal.handle.width">4</system:Double>
-	<Thickness				x:Key="md.comp.slider.horizontal.track.spacing">6 0</Thickness>
-	<system:Double		x:Key="md.comp.slider.vertical.handle.height">4</system:Double>
-	<system:Double		x:Key="md.comp.slider.vertical.handle.width">44</system:Double>
-	<Thickness				x:Key="md.comp.slider.vertical.track.spacing">0 6</Thickness>
-	<system:Double		x:Key="md.comp.slider.vertical-pressed.handle.height">4</system:Double>
-			<!-- ^ Not actually present in the template -->
-	
-	<!-- Component / ToolTip -->
-	<system:Double		x:Key="md.comp.tooltip.default.container.min-height">24</system:Double>
-	<Thickness				x:Key="md.comp.tooltip.default.container.padding">8</Thickness>
-	<mux:Alias				x:Key="md.comp.tooltip.default.container.shape" ResourceKey="md.sys.shape.corner.extra-small" />
-	
+  <!-- Component / Progress Indicator -->
+  <PenLineCap x:Key="md.comp.progress.circular.track.cap">Round</PenLineCap>
+  <system:Double x:Key="md.comp.progress.circular.track.thickness">4</system:Double>
+  <mux:Alias x:Key="md.comp.progress.default.track.shape" ResourceKey="md.sys.shape.corner.full" />
+  <system:Double x:Key="md.comp.progress.default.track.spacing">4</system:Double>
+
+  <!-- Component / Scrollbar -->
+  <system:Double x:Key="md.comp.scrollbar.default.container.min-height">4</system:Double>
+  <system:Double x:Key="md.comp.scrollbar.default.container.min-width">4</system:Double>
+  <mux:Alias x:Key="md.comp.scrollbar.default.container.shape" ResourceKey="md.sys.shape.corner.full" />
+  <system:Double x:Key="md.comp.scrollbar.default.thumb.opacity">0.29</system:Double>
+  <system:Double x:Key="md.comp.scrollbar.disabled.container.opacity">0.38</system:Double>
+  <system:Double x:Key="md.comp.scrollbar.focus.thumb.opacity">0.75</system:Double>
+  <system:Double x:Key="md.comp.scrollbar.hover.thumb.opacity">0.65</system:Double>
+  <system:Double x:Key="md.comp.scrollbar.pressed.thumb.opacity">0.85</system:Double>
+
+  <!-- Component / Slider -->
+  <system:Double x:Key="md.comp.slider.horizontal.handle.height">44</system:Double>
+  <system:Double x:Key="md.comp.slider.horizontal.handle.width">4</system:Double>
+  <Thickness x:Key="md.comp.slider.horizontal.track.spacing">6 0</Thickness>
+  <system:Double x:Key="md.comp.slider.vertical.handle.height">4</system:Double>
+  <system:Double x:Key="md.comp.slider.vertical.handle.width">44</system:Double>
+  <Thickness x:Key="md.comp.slider.vertical.track.spacing">0 6</Thickness>
+  <system:Double x:Key="md.comp.slider.vertical-pressed.handle.height">4</system:Double>
+  <!-- ^ Not actually present in the template -->
+
+  <!-- Component / ToolTip -->
+  <system:Double x:Key="md.comp.tooltip.default.container.min-height">24</system:Double>
+  <Thickness x:Key="md.comp.tooltip.default.container.padding">8</Thickness>
+  <mux:Alias x:Key="md.comp.tooltip.default.container.shape" ResourceKey="md.sys.shape.corner.extra-small" />
+
 </ResourceDictionary>
